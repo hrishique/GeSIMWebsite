@@ -89,18 +89,65 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       <section className="w-full min-h-screen py-12 border-t border-slate-100 bg-white">
         <div className="max-width-container grid lg:grid-cols-12 gap-8 items-center">
           
-          {/* Left Column: Light Green Container Card */}
+          {/* Left Column: Invest layered card (Figma node 764:178718) */}
           <div className="lg:col-span-6 flex justify-center w-full">
-            <div className="w-full h-[68vh] max-h-[680px] min-h-[460px] rounded-[2.5rem] bg-[#E6F9F0] p-0 flex justify-center items-center shadow-md relative overflow-hidden border border-emerald-100/60">
-              <motion.img 
-                initial={{ opacity: 0, scale: 0.96, y: 20 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+            <div className="w-full h-[68vh] max-h-[680px] min-h-[460px] rounded-[2.5rem] p-0 relative overflow-hidden shadow-md border border-emerald-100/60 bg-gradient-to-b from-white to-slate-100">
+
+              {/* Layer 1: vertical grid lines (fades in last, with chart) */}
+              <motion.img
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.55, ease: "easeOut" }}
+                src="/assets/invest/InvestGrid.svg"
+                alt=""
+                className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
+              />
+
+              {/* Layer 2: green area chart (fades in last, with grid) */}
+              <motion.img
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: 0.55, ease: "easeOut" }}
+                src="/assets/invest/InvestChart.svg"
+                alt=""
+                className="absolute left-[-9%] bottom-0 w-[138%] h-auto object-contain object-bottom pointer-events-none z-10"
+              />
+
+              {/* Layer 3: phone — rises bottom->top, FIRST. Bleeds off bottom, top contained */}
+              <motion.img
+                initial={{ opacity: 0, y: 80 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                src="/assets/invest_graphic.png" 
-                alt="Grow Wealth Keep Privacy Investments" 
-                className="w-full h-full object-cover rounded-[2.5rem]"
+                src="/assets/invest/InvestPhone.png"
+                alt="GeSIM Money app invest screen"
+                className="absolute left-1/2 -translate-x-1/2 top-[6%] h-[100%] w-auto max-w-none object-contain z-20 drop-shadow-xl"
               />
+
+              {/* Layer 4: green up-arrow — rises bottom->top, slight delay after phone */}
+              <motion.img
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.45, delay: 0.2, ease: "easeOut" }}
+                src="/assets/invest/InvestArrowUp.svg"
+                alt=""
+                className="absolute left-[14.5%] top-[42.7%] w-[11.4%] z-30 pointer-events-none"
+              />
+
+              {/* Layer 5: red down-arrow — drops top->down, after up-arrow */}
+              <motion.img
+                initial={{ opacity: 0, y: -40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.45, delay: 0.32, ease: "easeOut" }}
+                src="/assets/invest/InvestArrowDown.svg"
+                alt=""
+                className="absolute left-[74%] top-[72%] w-[11.4%] z-30 pointer-events-none"
+              />
+
             </div>
           </div>
 
