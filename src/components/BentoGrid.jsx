@@ -41,7 +41,7 @@ export default function BentoGrid({ openDownloadModal }) {
   return (
     <section className="py-24 bg-white border-t border-slate-100 text-left">
       <div className="max-width-container">
-        
+
         {/* Section Header */}
         <div className="flex items-center justify-between mb-12">
           <div>
@@ -57,7 +57,7 @@ export default function BentoGrid({ openDownloadModal }) {
 
         {/* Native 5 Bento Tiles Grid */}
         <div className="grid md:grid-cols-12 gap-6 items-stretch mb-20">
-          
+
           {/* Tile 1: Global eSIM (Tall Left Card) */}
           <div className="md:col-span-5 rounded-3xl bg-slate-50 border border-slate-200/80 p-8 flex flex-col justify-between relative overflow-hidden group">
             <div className="space-y-3 relative z-10">
@@ -91,7 +91,7 @@ export default function BentoGrid({ openDownloadModal }) {
 
           {/* Right Column (4 Cards) */}
           <div className="md:col-span-7 grid sm:grid-cols-2 gap-6">
-            
+
             {/* Tile 2: Browse Securely */}
             <div className="rounded-3xl bg-sky-50/80 border border-sky-100 p-6 flex flex-col justify-between relative overflow-hidden">
               <div className="w-12 h-12 rounded-2xl bg-white text-sky-500 flex items-center justify-center shadow-xs mb-6">
@@ -165,37 +165,12 @@ export default function BentoGrid({ openDownloadModal }) {
 
           </div>
         </div>
-
-        {/* Benefits You Can Get (All 6 Figma items) */}
-        <div className="space-y-8">
-          <h3 className="text-3xl font-extrabold text-slate-900">
-            Benefits you can get
-          </h3>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {benefits.map((b, i) => {
-              const IconComp = b.icon;
-              return (
-                <div key={i} className="p-8 rounded-3xl bg-slate-50 border border-slate-200/80 space-y-4 hover:border-slate-300 transition-colors">
-                  <div className="w-10 h-10 rounded-xl bg-white border border-slate-200 flex items-center justify-center text-slate-900 shadow-xs">
-                    <IconComp className="w-5 h-5" />
-                  </div>
-                  <h4 className="text-xl font-bold text-slate-900 leading-snug">{b.title}</h4>
-                  <p className="text-slate-500 text-sm leading-relaxed">
-                    {b.desc}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
       </div>
 
       {/* eSIM Configurator Modal */}
-      <InteractiveESimModal 
-        isOpen={eSimModalOpen} 
-        onClose={() => setESimModalOpen(false)} 
+      <InteractiveESimModal
+        isOpen={eSimModalOpen}
+        onClose={() => setESimModalOpen(false)}
       />
     </section>
   );

@@ -21,12 +21,12 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="w-full h-[68vh] max-h-[680px] min-h-[460px] rounded-[36px] bg-[#00A3FF] p-0 flex justify-center items-center shadow-lg relative overflow-hidden"
+              className="w-full h-[68vh] max-h-[680px] min-h-[460px] rounded-[36px] bg-[#00A3FF] p-0 flex justify-center items-end shadow-lg relative overflow-hidden"
             >
-              {/* Background Dotted Map Pattern */}
+              {/* Background Halftone Pattern (Figma node 764:175239) */}
               <div 
-                className="absolute inset-0 w-full h-full bg-cover bg-center opacity-20 pointer-events-none"
-                style={{ backgroundImage: "url('/assets/clean_dotted_world_map.png')" }}
+                className="absolute inset-0 w-full h-full bg-cover bg-center pointer-events-none"
+                style={{ backgroundImage: "url('/assets/BgConnectMobile.svg')" }}
               />
 
               {/* Beat 2: Portrait Phone device mockup drops from TOP EDGE downward into resting position */}
@@ -37,7 +37,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
                 src="/assets/connect_phone_only.png" 
                 alt="Connect Without Borders Mobile App Display" 
-                className="h-[105%] max-w-none object-contain relative z-10"
+                className="h-[113%] max-w-none object-contain relative z-10 mb-[6vh]"
               />
             </motion.div>
           </div>
