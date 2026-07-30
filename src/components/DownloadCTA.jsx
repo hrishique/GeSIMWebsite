@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export default function DownloadCTA({ openDownloadModal }) {
   return (
-    <section className="w-full py-16 lg:py-24 bg-white flex justify-center items-center select-none">
+    <section className="w-full py-16 lg:py-24 bg-white select-none">
       <div className="max-width-container">
         
         {/* Fixed Height Rounded Panel */}

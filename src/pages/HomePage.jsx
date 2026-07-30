@@ -17,8 +17,8 @@ export default function HomePage({ openDownloadModal, openContactModal }) {
       <PosterMarquee />
       <BenefitsMarquee />
       <BentoGrid openDownloadModal={openDownloadModal} />
-      <FAQ openContactModal={openContactModal} />
       <DownloadCTA openDownloadModal={openDownloadModal} />
+      <FAQ openContactModal={openContactModal} />
     </div>
   );
 }
