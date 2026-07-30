@@ -112,7 +112,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 transition={{ duration: 0.6, delay: 0.55, ease: "easeOut" }}
                 src="/assets/invest/InvestChart.svg"
                 alt=""
-                className="absolute left-[-9%] bottom-0 w-[138%] h-auto object-contain object-bottom pointer-events-none z-10"
+                className="absolute left-[-9%] top-[36%] w-[138%] h-[68%] object-fill pointer-events-none z-10"
               />
 
               {/* Layer 3: phone — rises bottom->top, FIRST. Bleeds off bottom, top contained */}
