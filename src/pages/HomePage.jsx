@@ -15,10 +15,10 @@ export default function HomePage({ openDownloadModal, openContactModal }) {
       <MarqueeTicker />
       <ScrollShowcaseSection openDownloadModal={openDownloadModal} />
       <PosterMarquee />
-      <BenefitsMarquee />
       <BentoGrid openDownloadModal={openDownloadModal} />
-      <FAQ openContactModal={openContactModal} />
+      <BenefitsMarquee />
       <DownloadCTA openDownloadModal={openDownloadModal} />
+      <FAQ openContactModal={openContactModal} />
     </div>
   );
 }
