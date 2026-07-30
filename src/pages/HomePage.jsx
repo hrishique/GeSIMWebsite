@@ -4,7 +4,6 @@ import ScrollShowcaseSection from '../components/ScrollShowcaseSection';
 import PosterMarquee from '../components/PosterMarquee';
 import BenefitsMarquee from '../components/BenefitsMarquee';
 import BentoGrid from '../components/BentoGrid';
-import MarqueeTicker from '../components/MarqueeTicker';
 import FAQ from '../components/FAQ';
 import DownloadCTA from '../components/DownloadCTA';
 
@@ -12,7 +11,6 @@ export default function HomePage({ openDownloadModal, openContactModal }) {
   return (
     <div className="space-y-0">
       <HeroSection openDownloadModal={openDownloadModal} />
-      <MarqueeTicker />
       <ScrollShowcaseSection openDownloadModal={openDownloadModal} />
       <PosterMarquee />
       <BenefitsMarquee />

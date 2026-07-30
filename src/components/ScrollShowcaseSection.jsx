@@ -10,7 +10,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       {/* SCREEN 3: CONNECT Showcase Section (Figma Node 764:175237) */}
       {/* Full-Viewport Height & Fully Percentage-Based Responsive Layout */}
       {/* ========================================================================= */}
-      <section className="w-full min-h-screen flex items-center justify-center py-12 border-t border-slate-100 bg-white">
+      <section className="w-full min-h-screen py-12 border-t border-slate-100 bg-white">
         <div className="max-width-container grid lg:grid-cols-12 gap-8 items-center">
           
           {/* Left Column: Sky-Blue Card (#00A3FF) with 2-Beat Animated Device Mockup (Node 764:175237 / 764:178706) */}
@@ -86,8 +86,8 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       {/* ========================================================================= */}
       {/* SCREEN 4: INVEST Showcase Section (Figma Node 764:178717) */}
       {/* ========================================================================= */}
-      <section className="w-full min-h-screen flex items-center justify-center py-12 px-[4vw] border-t border-slate-100 bg-white">
-        <div className="w-full max-w-[1400px] grid lg:grid-cols-12 gap-[4vw] items-center">
+      <section className="w-full min-h-screen py-12 border-t border-slate-100 bg-white">
+        <div className="max-width-container grid lg:grid-cols-12 gap-8 items-center">
           
           {/* Left Column: Light Green Container Card */}
           <div className="lg:col-span-6 flex justify-center w-full">
@@ -138,8 +138,8 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       {/* ========================================================================= */}
       {/* SCREEN 5: SPEND Showcase Section (Figma Node 764:178780) */}
       {/* ========================================================================= */}
-      <section className="w-full min-h-screen flex items-center justify-center py-12 px-[4vw] border-t border-slate-100 bg-white">
-        <div className="w-full max-w-[1400px] grid lg:grid-cols-12 gap-[4vw] items-center">
+      <section className="w-full min-h-screen py-12 border-t border-slate-100 bg-white">
+        <div className="max-width-container grid lg:grid-cols-12 gap-8 items-center">
           
           {/* Left Column: Deep Purple/Indigo Container Card */}
           <div className="lg:col-span-6 flex justify-center w-full">
