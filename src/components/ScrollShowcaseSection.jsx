@@ -5,18 +5,18 @@ import { BarChart3, TrendingUp, Tag } from 'lucide-react';
 export default function ScrollShowcaseSection({ openDownloadModal }) {
   return (
     <>
-      
+
       {/* ========================================================================= */}
       {/* SCREEN 3: CONNECT Showcase Section (Figma Node 764:175237) */}
       {/* Full-Viewport Height & Fully Percentage-Based Responsive Layout */}
       {/* ========================================================================= */}
       <section className="w-screen h-screen flex-shrink-0 flex items-center justify-center py-12 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
         <div className="max-width-container grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
+
           {/* Left Column: Sky-Blue Card (#00A3FF) with 2-Beat Animated Device Mockup (Node 764:175237 / 764:178706) */}
           <div className="lg:col-span-6 flex justify-center w-full">
             {/* Beat 1: Sky-Blue Card settles in first */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -24,19 +24,19 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
               className="w-full h-[68vh] max-h-[640px] min-h-[460px] rounded-[36px] bg-[#00A3FF] p-0 flex justify-center items-end shadow-lg relative overflow-hidden"
             >
               {/* Background Halftone Pattern (Figma node 764:175239) */}
-              <div 
+              <div
                 className="absolute inset-0 w-full h-full bg-cover bg-center pointer-events-none"
                 style={{ backgroundImage: "url('/assets/BgConnectMobile.svg')" }}
               />
 
               {/* Beat 2: Portrait Phone device mockup drops from TOP EDGE downward into resting position */}
-              <motion.img 
+              <motion.img
                 initial={{ opacity: 0, y: -70 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
-                src="/assets/connect_phone_only.png" 
-                alt="Connect Without Borders Mobile App Display" 
+                src="/assets/connect_phone_only.png"
+                alt="Connect Without Borders Mobile App Display"
                 className="h-[113%] max-w-none object-contain relative z-10 mb-[6vh]"
               />
             </motion.div>
@@ -44,10 +44,10 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
 
           {/* Right Column: Vertical Stack (Icon Tile -> Heading -> Subtext) matching Node 764:175237 */}
           <div className="lg:col-span-6 flex flex-col justify-center space-y-6 p-[2%]">
-            
+
             {/* Inline Row: Dark Icon Tile + Heading */}
             <div className="flex items-center gap-4 lg:gap-5">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -57,7 +57,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 <BarChart3 className="w-6 h-6 stroke-[2.5]" />
               </motion.div>
 
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -69,7 +69,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
             </div>
 
             {/* Subtext */}
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -89,10 +89,10 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       {/* ========================================================================= */}
       <section className="w-screen h-screen flex-shrink-0 flex items-center justify-center py-12 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
         <div className="max-width-container grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
+
           {/* Left Column: Invest layered card (Figma node 764:178718) */}
           <div className="lg:col-span-6 flex justify-center w-full">
-            <div className="w-full h-[68vh] max-h-[640px] min-h-[460px] rounded-[36px] p-0 relative overflow-hidden shadow-lg border border-emerald-100/60 bg-gradient-to-b from-white to-slate-100 flex justify-center items-end">
+            <div className="w-full max-w-[540px] aspect-[580/656] rounded-[36px] p-0 relative overflow-hidden shadow-lg border border-emerald-100/60 bg-gradient-to-b from-white to-slate-100">
 
               {/* Layer 1: vertical grid lines (fades in last, with chart) */}
               <motion.img
@@ -113,7 +113,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 transition={{ duration: 0.6, delay: 0.55, ease: "easeOut" }}
                 src="/assets/invest/InvestChart.svg"
                 alt=""
-                className="absolute left-[-9%] top-[36%] w-[138%] h-[68%] object-fill pointer-events-none z-10"
+                className="absolute left-[0%] bottom-0 w-[155%] h-auto object-contain object-bottom pointer-events-none z-10"
               />
 
               {/* Layer 3: phone — rises bottom->top, FIRST. Bleeds off bottom, top contained */}
@@ -154,10 +154,10 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
 
           {/* Right Column: Title & Subheadline */}
           <div className="lg:col-span-6 flex flex-col justify-center space-y-6 p-[2%]">
-            
+
             {/* Inline Row: Dark Icon Tile + Heading */}
             <div className="flex items-center gap-4 lg:gap-5">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -167,7 +167,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 <TrendingUp className="w-6 h-6 stroke-[2.5]" />
               </motion.div>
 
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -179,7 +179,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
             </div>
 
             {/* Subtext */}
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
@@ -199,17 +199,17 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       {/* ========================================================================= */}
       <section className="w-screen h-screen flex-shrink-0 flex items-center justify-center py-12 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
         <div className="max-width-container grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
+
           {/* Left Column: Deep Purple/Indigo Container Card */}
           <div className="lg:col-span-6 flex justify-center w-full">
             <div className="w-full h-[68vh] max-h-[640px] min-h-[460px] rounded-[36px] bg-slate-900 p-0 flex justify-center items-center shadow-lg relative overflow-hidden">
-              <motion.img 
+              <motion.img
                 initial={{ opacity: 0, scale: 0.96, y: 20 }}
                 whileInView={{ opacity: 1, scale: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                src="/assets/spend_graphic.png" 
-                alt="Spend Like a Local Visa Card" 
+                src="/assets/spend_graphic.png"
+                alt="Spend Like a Local Visa Card"
                 className="w-full h-full object-cover rounded-[36px]"
               />
             </div>
@@ -217,10 +217,10 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
 
           {/* Right Column: Title & Subheadline */}
           <div className="lg:col-span-6 flex flex-col justify-center space-y-6 p-[2%]">
-            
+
             {/* Inline Row: Dark Icon Tile + Heading */}
             <div className="flex items-center gap-4 lg:gap-5">
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -230,7 +230,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 <Tag className="w-6 h-6 stroke-[2.5]" />
               </motion.div>
 
-              <motion.h2 
+              <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -242,7 +242,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
             </div>
 
             {/* Subtext */}
-            <motion.p 
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
