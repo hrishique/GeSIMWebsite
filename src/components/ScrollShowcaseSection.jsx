@@ -200,18 +200,38 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       <section className="w-screen h-screen flex-shrink-0 flex items-center justify-center py-12 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
         <div className="max-width-container grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-          {/* Left Column: Deep Purple/Indigo Container Card */}
+          {/* Left Column: Spend layered card (Figma node 764:178780) */}
           <div className="lg:col-span-6 flex justify-center w-full">
-            <div className="w-full h-[68vh] max-h-[640px] min-h-[460px] rounded-[36px] bg-slate-900 p-0 flex justify-center items-center shadow-lg relative overflow-hidden">
-              <motion.img
-                initial={{ opacity: 0, scale: 0.96, y: 20 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                src="/assets/spend_graphic.png"
-                alt="Spend Like a Local Visa Card"
-                className="w-full h-full object-cover rounded-[36px]"
+            <div className="w-full max-w-[540px] aspect-[580/656] rounded-[36px] bg-[#111111] border border-white/10 p-0 relative overflow-hidden shadow-lg">
+
+              {/* Gradient glow near top */}
+              <div
+                className="absolute left-1/2 -translate-x-1/2 top-[-21%] w-[170%] h-[48%] blur-[48px] opacity-50 pointer-events-none z-0"
+                style={{ background: 'linear-gradient(86deg, rgb(189,118,250) 10%, rgb(8,249,226) 130%)' }}
               />
+
+              {/* Layer 1: phone — drops top->bottom, FIRST. Bleeds off top, dimmed per Figma */}
+              <motion.img
+                initial={{ opacity: 0, y: -60 }}
+                whileInView={{ opacity: 0.56, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                src="/assets/spend/SpendScreenPhone.png"
+                alt="GeSIM Money app spend screen"
+                className="absolute left-[15.9%] top-[-26.2%] w-[60.9%] h-[110.7%] object-contain z-[1] pointer-events-none"
+              />
+
+              {/* Layer 2: VISA card — drops top->bottom, slight delay after phone. Sits within bounds */}
+              <motion.img
+                initial={{ opacity: 0, y: -60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, delay: 0.28, ease: "easeOut" }}
+                src="/assets/spend/SpendScreenCard.png"
+                alt="GeSIM Visa Card"
+                className="absolute left-[28%] top-[11.6%] w-[61%] h-[89%] object-contain z-[2] drop-shadow-2xl pointer-events-none"
+              />
+
             </div>
           </div>
 
