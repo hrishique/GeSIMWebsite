@@ -60,6 +60,7 @@ export default function BentoGrid({ openDownloadModal }) {
 
           {/* Tile 1: Global eSIM (Tall Left Card) */}
           <div className="md:col-span-5 rounded-3xl bg-slate-50 border border-slate-200/80 p-8 flex flex-col justify-between relative overflow-hidden group">
+            <img src="/assets/features/GlobalesimMap.png" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.15] pointer-events-none z-0" />
             <div className="space-y-3 relative z-10">
               <span className="text-xs font-mono font-bold uppercase text-sky-500">Telecom Layer</span>
               <h3 className="text-2xl font-extrabold text-slate-900">Global eSIM</h3>
