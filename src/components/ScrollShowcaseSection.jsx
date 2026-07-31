@@ -87,11 +87,11 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       {/* SCREEN 4: INVEST Showcase Section (Figma Node 764:178717) */}
       {/* ========================================================================= */}
       <section className="w-full min-h-screen py-12 border-t border-slate-100 bg-white">
-        <div className="max-width-container grid lg:grid-cols-12 gap-8 items-center">
+        <div className="max-width-container max-w-[1440px] grid lg:grid-cols-12 gap-8 items-center">
           
           {/* Left Column: Invest layered card (Figma node 764:178718) */}
-          <div className="lg:col-span-6 flex justify-center w-full">
-            <div className="w-full h-[68vh] max-h-[680px] min-h-[460px] rounded-[2.5rem] p-0 relative overflow-hidden shadow-md border border-emerald-100/60 bg-gradient-to-b from-white to-slate-100">
+          <div className="lg:col-span-5 flex justify-start w-full">
+            <div className="w-full max-w-[560px] aspect-[580/656] rounded-[2.5rem] p-0 relative overflow-hidden shadow-md border border-emerald-100/60 bg-gradient-to-b from-white to-slate-100">
 
               {/* Layer 1: vertical grid lines (fades in last, with chart) */}
               <motion.img
@@ -123,7 +123,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 src="/assets/invest/InvestPhone.png"
                 alt="GeSIM Money app invest screen"
-                className="absolute left-1/2 -translate-x-1/2 top-[6%] h-[100%] w-auto max-w-none object-contain z-20 drop-shadow-xl"
+                className="absolute left-1/2 -translate-x-1/2 top-[8.8%] w-[62%] h-auto max-w-none object-contain z-20 drop-shadow-xl"
               />
 
               {/* Layer 4: green up-arrow — rises bottom->top, slight delay after phone */}
