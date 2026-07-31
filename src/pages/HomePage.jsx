@@ -2,6 +2,7 @@ import React from 'react';
 import HeroSection from '../components/HeroSection';
 import ScrollShowcaseSection from '../components/ScrollShowcaseSection';
 import PosterMarquee from '../components/PosterMarquee';
+import HorizontalScrollSection from '../components/HorizontalScrollSection';
 import BenefitsMarquee from '../components/BenefitsMarquee';
 import BentoGrid from '../components/BentoGrid';
 import FAQ from '../components/FAQ';
@@ -11,8 +12,7 @@ export default function HomePage({ openDownloadModal, openContactModal }) {
   return (
     <div className="space-y-0">
       <HeroSection openDownloadModal={openDownloadModal} />
-      <ScrollShowcaseSection openDownloadModal={openDownloadModal} />
-      <PosterMarquee />
+      <HorizontalScrollSection openDownloadModal={openDownloadModal} />
       <BenefitsMarquee />
       <BentoGrid openDownloadModal={openDownloadModal} />
       <DownloadCTA openDownloadModal={openDownloadModal} />
