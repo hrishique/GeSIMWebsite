@@ -60,7 +60,7 @@ export default function BentoGrid({ openDownloadModal }) {
         <div className="grid md:grid-cols-3 gap-6 mb-20">
 
           {/* Column 1: Tile 1 (Global eSIM) */}
-          <div className="md:col-span-1 rounded-[18px] bg-[#f7f9fb] border border-[#f1f1f1] p-8 flex flex-col justify-end relative overflow-hidden min-h-[560px]">
+          <div className="md:col-span-1 rounded-[18px] bg-[#f7f9fb] border border-[#f1f1f1] p-8 flex flex-col justify-end relative overflow-hidden min-h-[560px] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:scale-[1.01] cursor-default">
             <img src="/assets/features/GlobalesimMap.png" alt="" className="absolute inset-0 w-full h-full object-cover opacity-[0.35] pointer-events-none z-0" />
             <img src="/assets/features/GlobalesimPhone.png" alt="" className="absolute left-[39%] top-[4%] w-[68%] h-[93%] object-contain object-top pointer-events-none z-[1] drop-shadow-lg" />
             <div className="absolute inset-x-0 bottom-0 h-[39%] bg-gradient-to-b from-[rgba(247,249,251,0)] to-[#f7f9fb] to-[40.756%] z-[5] pointer-events-none" />
@@ -82,7 +82,7 @@ export default function BentoGrid({ openDownloadModal }) {
           <div className="md:col-span-1 flex flex-col gap-6">
 
             {/* Tile 2: Browse Securely */}
-            <div className="w-full rounded-[18px] bg-[#f7f9fb] border border-[#f1f1f1] p-8 relative overflow-hidden flex flex-col justify-between aspect-[426/340]">
+            <div className="w-full rounded-[18px] bg-[#f7f9fb] border border-[#f1f1f1] p-8 relative overflow-hidden flex flex-col justify-between aspect-[426/340] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:scale-[1.01] cursor-default">
               <div className="absolute inset-0 z-0 pointer-events-none" style={{ background: 'radial-gradient(circle at 50% 30%, rgba(147,197,253,0.55), rgba(196,181,253,0.42) 45%, transparent 70%)' }} />
               <div className="absolute left-1/2 top-[30%] -translate-x-1/2 -translate-y-1/2 z-[1] pointer-events-none">
                 {[190, 250, 310, 370, 430].map((size, i) => (
@@ -103,7 +103,7 @@ export default function BentoGrid({ openDownloadModal }) {
             </div>
 
             {/* Tile 4: Invest Privately */}
-            <div className="flex-1 rounded-[18px] bg-[#f7f9fb] border border-[#f1f1f1] p-8 relative overflow-hidden flex flex-col justify-between">
+            <div className="flex-1 rounded-[18px] bg-[#f7f9fb] border border-[#f1f1f1] p-8 relative overflow-hidden flex flex-col justify-between transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:scale-[1.01] cursor-default">
               <img src="/assets/invest/InvestGrid.svg" alt="" className="absolute inset-0 w-full h-full object-cover opacity-30 pointer-events-none z-0" />
               <svg className="absolute bottom-[110px] left-0 w-full h-[100px] z-[1] pointer-events-none" viewBox="0 0 400 100" preserveAspectRatio="none">
                 <defs>
@@ -165,7 +165,7 @@ export default function BentoGrid({ openDownloadModal }) {
           <div className="md:col-span-1 flex flex-col gap-6">
 
             {/* Tile 3: Virtual Numbers (flattened, no animation needed) */}
-            <div className="self-start rounded-[18px] border border-[#f1f1f1] overflow-hidden aspect-[426/414]">
+            <div className="self-start rounded-[18px] border border-[#f1f1f1] overflow-hidden aspect-[426/414] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:scale-[1.01] cursor-default">
               <img
                 src="/assets/features/VNCard.png"
                 alt="Virtual Numbers: call, receive OTPs and verify accounts from anywhere"
@@ -174,7 +174,7 @@ export default function BentoGrid({ openDownloadModal }) {
             </div>
 
             {/* Tile 5: Spend Freely (flattened, no animation needed) */}
-            <div className="self-start rounded-[18px] border border-[#f1f1f1] overflow-hidden aspect-[426/266]">
+            <div className="self-start rounded-[18px] border border-[#f1f1f1] overflow-hidden aspect-[426/266] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:scale-[1.01] cursor-default">
               <img
                 src="/assets/features/SpendCardFull.png"
                 alt="Spend Freely: off-ramp, pay globally, and manage your money effortlessly"
