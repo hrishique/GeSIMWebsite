@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @layer base {
   :root {
-    --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-heading: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   body {

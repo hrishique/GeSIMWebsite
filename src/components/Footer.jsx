@@ -8,13 +8,19 @@ export default function Footer({ openDownloadModal }) {
       <div className="max-width-container space-y-8">
         
         {/* Main Blue Panel Card matching Figma Node 764:179487 */}
-        <div className="relative w-full bg-[#00A3FF] rounded-[28px] lg:rounded-[36px] overflow-hidden p-8 sm:p-12 lg:p-16 text-white shadow-lg">
+        <div className="relative w-full min-h-[420px] sm:min-h-[480px] lg:min-h-[560px] bg-[#00A3FF] rounded-[28px] lg:rounded-[36px] overflow-hidden p-8 sm:p-12 lg:p-16 text-white shadow-lg">
           
-          {/* Halftone "GeSIM" Pattern Texture on lower half */}
+          {/* Background bar pattern */}
           <img 
-            src="/assets/footer/footer-pattern.png" 
+            src="/assets/footer/FooterBg.svg" 
             alt="" 
-            className="absolute left-1/2 bottom-0 -translate-x-1/2 w-full max-w-none opacity-25 pointer-events-none z-0 object-contain" 
+            className="absolute inset-0 w-full h-full opacity-20 pointer-events-none z-0 object-cover" 
+          />
+          {/* "GeSIM" wordmark bars, layered above the background pattern */}
+          <img 
+            src="/assets/footer/GeSIM.svg" 
+            alt="" 
+            className="absolute inset-0 w-full h-full opacity-25 pointer-events-none z-[1] object-cover brightness-0 invert" 
           />
 
           <div className="relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">

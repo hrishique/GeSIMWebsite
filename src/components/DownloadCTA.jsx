@@ -17,7 +17,7 @@ export default function DownloadCTA({ openDownloadModal }) {
           />
 
           {/* Left Half: Whole Phone Mockup Visible Vertically inside Panel (margin top & bottom) */}
-          <div className="w-[42%] hidden md:flex items-center justify-start h-full pl-4 lg:pl-8 pointer-events-none z-10">
+          <div className="w-[42%] hidden md:flex items-start justify-start h-full pl-4 lg:pl-8 pointer-events-none z-10">
             <motion.img 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
