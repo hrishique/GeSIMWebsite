@@ -56,15 +56,15 @@ export default function HeroSection({ openDownloadModal }) {
         />
 
         {/* Top Text Region (Page 1 Title & Subheadline - Positioned Cleanly at Top) */}
-        <div className="relative z-10 w-full max-w-[1100px] px-6 pt-10 md:pt-14 flex items-center justify-center">
+        <div className="relative z-10 w-full max-w-[1380px] px-4 sm:px-6 pt-10 md:pt-14 flex items-center justify-center">
           <motion.div 
             style={{ opacity: text1Opacity, display: text1Display }}
-            className="space-y-4 pointer-events-none"
+            className="space-y-4 pointer-events-none flex flex-col items-center"
           >
-            <h1 className="text-[44px] sm:text-[56px] lg:text-[62px] font-extrabold text-[#282f34] tracking-[-1.86px] leading-[1.08] font-heading">
+            <h1 className="text-[38px] sm:text-[52px] lg:text-[54px] xl:text-[60px] font-extrabold text-[#282f34] tracking-[-1.8px] leading-[1.08] font-heading lg:whitespace-nowrap max-w-full">
               Live anywhere. Explain yourself to no one.
             </h1>
-            <p className="text-[18px] sm:text-[24px] lg:text-[28px] text-[#282f34]/70 max-w-[860px] mx-auto font-normal leading-[1.3] tracking-[-0.8px] font-body">
+            <p className="text-[18px] sm:text-[24px] lg:text-[26px] text-[#282f34]/70 max-w-[860px] mx-auto font-normal leading-[1.3] tracking-[-0.8px] font-body">
               Data in 190+ countries, numbers that don't lead back to you, and money that moves without trail. One app. No paperwork.
             </p>
           </motion.div>

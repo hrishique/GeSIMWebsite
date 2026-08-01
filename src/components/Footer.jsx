@@ -8,13 +8,18 @@ export default function Footer({ openDownloadModal }) {
       <div className="max-width-container space-y-8">
 
         {/* Main Blue Panel Card matching Figma Node 764:179487 3 ki jagah E karna h bs*/}
-        <div className="relative w-full min-h-[520px] sm:min-h-[600px] lg:min-h-[720px] bg-[#00AEFF] rounded-[28px] lg:rounded-[36px] overflow-hidden p-8 pb-20 sm:p-12 sm:pb-24 lg:p-16 text-white shadow-lg">
+        <div className="relative w-full min-h-[520px] sm:min-h-[600px] lg:min-h-[720px] bg-[#00AEFF] rounded-[28px] lg:rounded-[36px] overflow-hidden p-6 pt-8 pb-16 sm:p-12 sm:pb-24 lg:p-16 text-white shadow-lg">
 
-          {/* Background bar pattern */}
+          {/* Background bar pattern (Desktop vs Mobile) */}
+          <img
+            src="/assets/mobile/footer/FooterBg.svg"
+            alt=""
+            className="lg:hidden absolute bottom-0 left-0 w-full h-[35%] object-cover object-bottom opacity-40 pointer-events-none z-0"
+          />
           <img
             src="/assets/footer/FooterBg.svg"
             alt=""
-            className="absolute inset-0 w-full h-full opacity-30 pointer-events-none z-0 object-cover"
+            className="hidden lg:block absolute inset-0 w-full h-full opacity-30 pointer-events-none z-0 object-cover"
           />
           {/* "GeSIM" wordmark bars, layered above the background pattern */}
           <img
@@ -26,15 +31,15 @@ export default function Footer({ openDownloadModal }) {
           <div className="relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
 
             {/* Left Column: Tagline + Store Badges + Social Icons */}
-            <div className="lg:col-span-8 space-y-8">
+            <div className="lg:col-span-8 space-y-6 sm:space-y-8">
 
               {/* Tagline */}
-              <h2 className="text-[38px] sm:text-[50px] lg:text-[60px] font-heading font-extrabold text-white tracking-[-1.8px] leading-[1.05] max-w-[520px]">
+              <h2 className="text-[36px] sm:text-[50px] lg:text-[60px] font-heading font-extrabold text-white tracking-[-1px] sm:tracking-[-1.5px] lg:tracking-[-1.8px] leading-[1.05] max-w-[520px]">
                 Freedom, in every connection
               </h2>
 
-              {/* 3 Store Badges Row */}
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
+              {/* 3 Store Badges Row — Single Row on Mobile */}
+              <div className="flex flex-row flex-nowrap items-center gap-2 sm:gap-4 pt-1 sm:pt-2">
                 <a
                   href="#"
                   onClick={(e) => { e.preventDefault(); openDownloadModal?.(); }}
@@ -44,7 +49,7 @@ export default function Footer({ openDownloadModal }) {
                   <img
                     src="/assets/App Links/badge-seeker.png"
                     alt="Seeker Solana Mobile"
-                    className="h-[44px] sm:h-[50px] w-auto object-contain"
+                    className="h-[34px] xs:h-[38px] sm:h-[50px] w-auto object-contain"
                   />
                 </a>
 
@@ -57,7 +62,7 @@ export default function Footer({ openDownloadModal }) {
                   <img
                     src="/assets/App Links/badge-appstore.png"
                     alt="Download on the App Store"
-                    className="h-[44px] sm:h-[50px] w-auto object-contain"
+                    className="h-[34px] xs:h-[38px] sm:h-[50px] w-auto object-contain"
                   />
                 </a>
 
@@ -70,13 +75,13 @@ export default function Footer({ openDownloadModal }) {
                   <img
                     src="/assets/App Links/badge-playstore.png"
                     alt="Get it on Google Play"
-                    className="h-[44px] sm:h-[50px] w-auto object-contain"
+                    className="h-[34px] xs:h-[38px] sm:h-[50px] w-auto object-contain"
                   />
                 </a>
               </div>
 
-              {/* Social Icons Row */}
-              <div className="flex items-center gap-3 pt-2">
+              {/* Social Icons Row (Desktop Only per Figma Mobile Design) */}
+              <div className="hidden lg:flex items-center gap-3 pt-2">
                 <a
                   href="#"
                   onClick={(e) => e.preventDefault()}
@@ -106,11 +111,11 @@ export default function Footer({ openDownloadModal }) {
             </div>
 
             {/* Right Column: Navigation Links (QUICK LINKS & SOCIALS) */}
-            <div className="lg:col-span-4 grid grid-cols-2 gap-8 pt-2">
+            <div className="lg:col-span-4 grid grid-cols-2 gap-8 pt-2 font-body">
 
               {/* QUICK LINKS */}
               <div className="space-y-4">
-                <h3 className="text-[12px] font-semibold text-white/70 tracking-[1.5px] uppercase font-mono">
+                <h3 className="text-[12px] font-bold text-[#66E1FF] tracking-[1.5px] uppercase font-sans">
                   QUICK LINKS
                 </h3>
                 <ul className="space-y-3">
@@ -134,7 +139,7 @@ export default function Footer({ openDownloadModal }) {
 
               {/* SOCIALS */}
               <div className="space-y-4">
-                <h3 className="text-[12px] font-semibold text-white/70 tracking-[1.5px] uppercase font-mono">
+                <h3 className="text-[12px] font-bold text-[#66E1FF] tracking-[1.5px] uppercase font-sans">
                   SOCIALS
                 </h3>
                 <ul className="space-y-3">
@@ -162,8 +167,8 @@ export default function Footer({ openDownloadModal }) {
 
         </div>
 
-        {/* Bottom Legal & Copyright Row (Outside Blue Panel) */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] sm:text-[14px] text-slate-500 font-body px-2">
+        {/* Bottom Legal & Copyright Row (Outside Blue Panel - Legal Links First on Mobile) */}
+        <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-4 text-[13px] sm:text-[14px] text-slate-500 font-body px-2">
 
           {/* Copyright & Disclaimer */}
           <div className="flex items-center gap-2">
