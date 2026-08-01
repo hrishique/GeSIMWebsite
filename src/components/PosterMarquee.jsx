@@ -90,49 +90,61 @@ export default function PosterMarquee() {
   };
 
   return (
-    <section className="w-full min-h-screen lg:w-screen lg:h-screen flex-shrink-0 flex flex-col justify-center py-16 lg:py-24 bg-white overflow-hidden select-none">
-      <div className="w-full flex flex-col gap-6 lg:gap-10 justify-center">
-        
-        {/* Row 1 (Blue CONNECT Pair positioned left-of-center ~38%) */}
-        <div className="w-full overflow-hidden flex justify-center">
-          <motion.div 
-            className="flex items-center gap-6 lg:gap-8 whitespace-nowrap -translate-x-[12%] lg:-translate-x-[14%]"
-          >
-            {row1Items.map((item, idx) => 
-              item.type === 'pill' 
-                ? renderPill(item.text, item.variant, idx)
-                : renderIconTile(item.icon, item.variant, idx)
-            )}
-          </motion.div>
-        </div>
+    <>
+      {/* Mobile view: single clean image asset matching Figma */}
+      <section className="lg:hidden w-full py-10 px-2 bg-white flex justify-center items-center">
+        <img
+          src="/assets/mobile/benefits/BenefitsMarquee.png"
+          alt="GeSIM Features"
+          className="w-full max-w-[370px] h-auto object-contain"
+        />
+      </section>
 
-        {/* Row 2 (Orange INVEST Pair positioned dead center ~50%) */}
-        <div className="w-full overflow-hidden flex justify-center">
-          <motion.div 
-            className="flex items-center gap-6 lg:gap-8 whitespace-nowrap translate-x-[0%]"
-          >
-            {row2Items.map((item, idx) => 
-              item.type === 'pill' 
-                ? renderPill(item.text, item.variant, idx)
-                : renderIconTile(item.icon, item.variant, idx)
-            )}
-          </motion.div>
-        </div>
+      {/* Desktop view: 3 animated pill rows */}
+      <section className="hidden lg:flex w-screen h-screen flex-shrink-0 flex-col justify-center py-24 bg-white overflow-hidden select-none">
+        <div className="w-full flex flex-col gap-10 justify-center">
+          
+          {/* Row 1 (Blue CONNECT Pair positioned left-of-center ~38%) */}
+          <div className="w-full overflow-hidden flex justify-center">
+            <motion.div 
+              className="flex items-center gap-8 whitespace-nowrap -translate-x-[14%]"
+            >
+              {row1Items.map((item, idx) => 
+                item.type === 'pill' 
+                  ? renderPill(item.text, item.variant, idx)
+                  : renderIconTile(item.icon, item.variant, idx)
+              )}
+            </motion.div>
+          </div>
 
-        {/* Row 3 (Purple SPEND Pair positioned right-of-center ~62%) */}
-        <div className="w-full overflow-hidden flex justify-center">
-          <motion.div 
-            className="flex items-center gap-6 lg:gap-8 whitespace-nowrap translate-x-[12%] lg:translate-x-[14%]"
-          >
-            {row3Items.map((item, idx) => 
-              item.type === 'pill' 
-                ? renderPill(item.text, item.variant, idx)
-                : renderIconTile(item.icon, item.variant, idx)
-            )}
-          </motion.div>
-        </div>
+          {/* Row 2 (Orange INVEST Pair positioned dead center ~50%) */}
+          <div className="w-full overflow-hidden flex justify-center">
+            <motion.div 
+              className="flex items-center gap-8 whitespace-nowrap translate-x-[0%]"
+            >
+              {row2Items.map((item, idx) => 
+                item.type === 'pill' 
+                  ? renderPill(item.text, item.variant, idx)
+                  : renderIconTile(item.icon, item.variant, idx)
+              )}
+            </motion.div>
+          </div>
 
-      </div>
-    </section>
+          {/* Row 3 (Purple SPEND Pair positioned right-of-center ~62%) */}
+          <div className="w-full overflow-hidden flex justify-center">
+            <motion.div 
+              className="flex items-center gap-8 whitespace-nowrap translate-x-[14%]"
+            >
+              {row3Items.map((item, idx) => 
+                item.type === 'pill' 
+                  ? renderPill(item.text, item.variant, idx)
+                  : renderIconTile(item.icon, item.variant, idx)
+              )}
+            </motion.div>
+          </div>
+
+        </div>
+      </section>
+    </>
   );
 }

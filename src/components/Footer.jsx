@@ -8,7 +8,7 @@ export default function Footer({ openDownloadModal }) {
       <div className="max-width-container space-y-8">
 
         {/* Main Blue Panel Card matching Figma Node 764:179487 3 ki jagah E karna h bs*/}
-        <div className="relative w-full min-h-[520px] sm:min-h-[600px] lg:min-h-[720px] bg-[#00AEFF] rounded-[28px] lg:rounded-[36px] overflow-hidden p-8 sm:p-12 lg:p-16 text-white shadow-lg">
+        <div className="relative w-full min-h-[520px] sm:min-h-[600px] lg:min-h-[720px] bg-[#00AEFF] rounded-[28px] lg:rounded-[36px] overflow-hidden p-8 pb-20 sm:p-12 sm:pb-24 lg:p-16 text-white shadow-lg">
 
           {/* Background bar pattern */}
           <img

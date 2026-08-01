@@ -10,7 +10,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       {/* SCREEN 3: CONNECT Showcase Section (Figma Node 764:175237) */}
       {/* Full-Viewport Height & Fully Percentage-Based Responsive Layout */}
       {/* ========================================================================= */}
-      <section className="w-full min-h-screen lg:w-screen lg:h-screen flex-shrink-0 flex items-center justify-center py-12 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
+      <section className="w-full lg:w-screen lg:h-screen flex-shrink-0 flex items-center justify-center py-10 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
         <div className="max-width-container grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left Column: Sky-Blue Card (#00A3FF) with 2-Beat Animated Device Mockup (Node 764:175237 / 764:178706) */}
@@ -92,7 +92,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       {/* ========================================================================= */}
       {/* SCREEN 4: INVEST Showcase Section (Figma Node 764:178717) */}
       {/* ========================================================================= */}
-      <section className="w-full min-h-screen lg:w-screen lg:h-screen flex-shrink-0 flex items-center justify-center py-12 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
+      <section className="w-full lg:w-screen lg:h-screen flex-shrink-0 flex items-center justify-center py-10 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
         <div className="max-width-container grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left Column: Invest layered card (Figma node 764:178718) */}
@@ -207,7 +207,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       {/* ========================================================================= */}
       {/* SCREEN 5: SPEND Showcase Section (Figma Node 764:178780) */}
       {/* ========================================================================= */}
-      <section className="w-full min-h-screen lg:w-screen lg:h-screen flex-shrink-0 flex items-center justify-center py-12 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
+      <section className="w-full lg:w-screen lg:h-screen flex-shrink-0 flex items-center justify-center py-10 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
         <div className="max-width-container grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left Column: Spend layered card (Figma node 764:178780) */}
