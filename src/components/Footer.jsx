@@ -6,28 +6,28 @@ export default function Footer({ openDownloadModal }) {
   return (
     <footer className="w-full bg-white pt-12 pb-16 select-none">
       <div className="max-width-container space-y-8">
-        
-        {/* Main Blue Panel Card matching Figma Node 764:179487 */}
-        <div className="relative w-full min-h-[420px] sm:min-h-[480px] lg:min-h-[560px] bg-[#00A3FF] rounded-[28px] lg:rounded-[36px] overflow-hidden p-8 sm:p-12 lg:p-16 text-white shadow-lg">
-          
+
+        {/* Main Blue Panel Card matching Figma Node 764:179487 3 ki jagah E karna h bs*/}
+        <div className="relative w-full min-h-[420px] sm:min-h-[480px] lg:min-h-[560px] bg-[#00AEFF] rounded-[28px] lg:rounded-[36px] overflow-hidden p-8 sm:p-12 lg:p-16 text-white shadow-lg">
+
           {/* Background bar pattern */}
-          <img 
-            src="/assets/footer/FooterBg.svg" 
-            alt="" 
-            className="absolute inset-0 w-full h-full opacity-20 pointer-events-none z-0 object-cover" 
+          <img
+            src="/assets/footer/FooterBg.svg"
+            alt=""
+            className="absolute inset-0 w-full h-full opacity-20 pointer-events-none z-0 object-cover"
           />
           {/* "GeSIM" wordmark bars, layered above the background pattern */}
-          <img 
-            src="/assets/footer/GeSIM.svg" 
-            alt="" 
-            className="absolute inset-0 w-full h-full opacity-25 pointer-events-none z-[1] object-cover brightness-0 invert" 
+          <img
+            src="/assets/footer/GeSIM.svg"
+            alt=""
+            className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[103%] h-auto max-w-none pointer-events-none z-[1]"
           />
 
           <div className="relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
-            
+
             {/* Left Column: Tagline + Store Badges + Social Icons */}
             <div className="lg:col-span-8 space-y-8">
-              
+
               {/* Tagline */}
               <h2 className="text-[38px] sm:text-[50px] lg:text-[60px] font-heading font-extrabold text-white tracking-[-1.8px] leading-[1.05] max-w-[520px]">
                 Freedom, in every connection
@@ -35,66 +35,66 @@ export default function Footer({ openDownloadModal }) {
 
               {/* 3 Store Badges Row */}
               <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
-                <a 
-                  href="#" 
+                <a
+                  href="#"
                   onClick={(e) => { e.preventDefault(); openDownloadModal?.(); }}
                   className="transition-transform hover:scale-105 active:scale-95 flex-shrink-0 cursor-pointer"
                   aria-label="Download Seeker Solana Mobile App"
                 >
-                  <img 
-                    src="/assets/App Links/badge-seeker.png" 
-                    alt="Seeker Solana Mobile" 
-                    className="h-[44px] sm:h-[50px] w-auto object-contain" 
+                  <img
+                    src="/assets/App Links/badge-seeker.png"
+                    alt="Seeker Solana Mobile"
+                    className="h-[44px] sm:h-[50px] w-auto object-contain"
                   />
                 </a>
 
-                <a 
-                  href="#" 
+                <a
+                  href="#"
                   onClick={(e) => { e.preventDefault(); openDownloadModal?.(); }}
                   className="transition-transform hover:scale-105 active:scale-95 flex-shrink-0 cursor-pointer"
                   aria-label="Download on the App Store"
                 >
-                  <img 
-                    src="/assets/App Links/badge-appstore.png" 
-                    alt="Download on the App Store" 
-                    className="h-[44px] sm:h-[50px] w-auto object-contain" 
+                  <img
+                    src="/assets/App Links/badge-appstore.png"
+                    alt="Download on the App Store"
+                    className="h-[44px] sm:h-[50px] w-auto object-contain"
                   />
                 </a>
 
-                <a 
-                  href="#" 
+                <a
+                  href="#"
                   onClick={(e) => { e.preventDefault(); openDownloadModal?.(); }}
                   className="transition-transform hover:scale-105 active:scale-95 flex-shrink-0 cursor-pointer"
                   aria-label="Get it on Google Play"
                 >
-                  <img 
-                    src="/assets/App Links/badge-playstore.png" 
-                    alt="Get it on Google Play" 
-                    className="h-[44px] sm:h-[50px] w-auto object-contain" 
+                  <img
+                    src="/assets/App Links/badge-playstore.png"
+                    alt="Get it on Google Play"
+                    className="h-[44px] sm:h-[50px] w-auto object-contain"
                   />
                 </a>
               </div>
 
               {/* Social Icons Row */}
               <div className="flex items-center gap-3 pt-2">
-                <a 
-                  href="#" 
+                <a
+                  href="#"
                   onClick={(e) => e.preventDefault()}
                   className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-colors cursor-pointer"
                   aria-label="Telegram"
                 >
                   <SiTelegram className="w-5 h-5" />
                 </a>
-                <a 
-                  href="#" 
+                <a
+                  href="#"
                   onClick={(e) => e.preventDefault()}
                   className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-colors cursor-pointer"
                   aria-label="X / Twitter"
                 >
                   <SiX className="w-4 h-4" />
                 </a>
-                <a 
-                  href="#" 
+                <a
+                  href="#"
                   onClick={(e) => e.preventDefault()}
                   className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-colors cursor-pointer"
                   aria-label="LinkedIn"
@@ -107,7 +107,7 @@ export default function Footer({ openDownloadModal }) {
 
             {/* Right Column: Navigation Links (QUICK LINKS & SOCIALS) */}
             <div className="lg:col-span-4 grid grid-cols-2 gap-8 pt-2">
-              
+
               {/* QUICK LINKS */}
               <div className="space-y-4">
                 <h3 className="text-[12px] font-semibold text-white/70 tracking-[1.5px] uppercase font-mono">
@@ -164,7 +164,7 @@ export default function Footer({ openDownloadModal }) {
 
         {/* Bottom Legal & Copyright Row (Outside Blue Panel) */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-[13px] sm:text-[14px] text-slate-500 font-body px-2">
-          
+
           {/* Copyright & Disclaimer */}
           <div className="flex items-center gap-2">
             <span className="font-medium text-slate-700">©2026 GeSIM</span>
