@@ -10,18 +10,23 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       {/* SCREEN 3: CONNECT Showcase Section (Figma Node 764:175237) */}
       {/* Full-Viewport Height & Fully Percentage-Based Responsive Layout */}
       {/* ========================================================================= */}
-      <section className="w-screen h-screen flex-shrink-0 flex items-center justify-center py-12 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
+      <section className="w-full min-h-screen lg:w-screen lg:h-screen flex-shrink-0 flex items-center justify-center py-12 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
         <div className="max-width-container grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left Column: Sky-Blue Card (#00A3FF) with 2-Beat Animated Device Mockup (Node 764:175237 / 764:178706) */}
           <div className="lg:col-span-6 flex justify-center w-full">
+            <img
+              src="/assets/mobile/showcase/ConnectCard.png"
+              alt="Connect without borders"
+              className="lg:hidden w-full max-w-[354px] aspect-[354/468] object-contain"
+            />
             {/* Beat 1: Sky-Blue Card settles in first */}
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.4, ease: "easeOut" }}
-              className="w-full h-[68vh] max-h-[640px] min-h-[460px] rounded-[36px] bg-[#00A3FF] p-0 flex justify-center items-end shadow-lg relative overflow-hidden"
+              className="hidden lg:flex w-full h-[68vh] max-h-[640px] min-h-[460px] rounded-[36px] bg-[#00A3FF] p-0 justify-center items-end shadow-lg relative overflow-hidden"
             >
               {/* Background Halftone Pattern (Figma node 764:175239) */}
               <div
@@ -87,12 +92,17 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       {/* ========================================================================= */}
       {/* SCREEN 4: INVEST Showcase Section (Figma Node 764:178717) */}
       {/* ========================================================================= */}
-      <section className="w-screen h-screen flex-shrink-0 flex items-center justify-center py-12 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
+      <section className="w-full min-h-screen lg:w-screen lg:h-screen flex-shrink-0 flex items-center justify-center py-12 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
         <div className="max-width-container grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left Column: Invest layered card (Figma node 764:178718) */}
           <div className="lg:col-span-6 flex justify-center w-full">
-            <div className="w-full max-w-[540px] aspect-[580/656] rounded-[36px] p-0 relative overflow-hidden shadow-lg border border-emerald-100/60 bg-gradient-to-b from-white to-slate-100">
+            <img
+              src="/assets/mobile/showcase/InvestCard.png"
+              alt="Grow wealth, keep privacy"
+              className="lg:hidden w-full max-w-[354px] aspect-[354/468] object-contain"
+            />
+            <div className="hidden lg:block w-full max-w-[540px] aspect-[580/656] rounded-[36px] p-0 relative overflow-hidden shadow-lg border border-emerald-100/60 bg-gradient-to-b from-white to-slate-100">
 
               {/* Layer 1: vertical grid lines (fades in last, with chart) */}
               <motion.img
@@ -197,12 +207,17 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       {/* ========================================================================= */}
       {/* SCREEN 5: SPEND Showcase Section (Figma Node 764:178780) */}
       {/* ========================================================================= */}
-      <section className="w-screen h-screen flex-shrink-0 flex items-center justify-center py-12 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
+      <section className="w-full min-h-screen lg:w-screen lg:h-screen flex-shrink-0 flex items-center justify-center py-12 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
         <div className="max-width-container grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left Column: Spend layered card (Figma node 764:178780) */}
           <div className="lg:col-span-6 flex justify-center w-full">
-            <div className="w-full max-w-[540px] aspect-[580/656] rounded-[36px] bg-[#111111] border border-white/10 p-0 relative overflow-hidden shadow-lg">
+            <img
+              src="/assets/mobile/showcase/SpendCard.png"
+              alt="Spend like a local, anywhere"
+              className="lg:hidden w-full max-w-[354px] aspect-[354/468] object-contain"
+            />
+            <div className="hidden lg:block w-full max-w-[540px] aspect-[580/656] rounded-[36px] bg-[#111111] border border-white/10 p-0 relative overflow-hidden shadow-lg">
 
               {/* Gradient glow near top */}
               <div

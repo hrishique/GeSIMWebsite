@@ -6,11 +6,11 @@ import PosterMarquee from './PosterMarquee';
 export default function HorizontalScrollSection({ openDownloadModal }) {
   const containerRef = useRef(null);
   const [isDesktop, setIsDesktop] = useState(
-    typeof window !== 'undefined' ? window.matchMedia('(min-width: 768px)').matches : false
+    typeof window !== 'undefined' ? window.matchMedia('(min-width: 1024px)').matches : false
   );
 
   useEffect(() => {
-    const mq = window.matchMedia('(min-width: 768px)');
+    const mq = window.matchMedia('(min-width: 1024px)');
     const update = () => setIsDesktop(mq.matches);
     mq.addEventListener('change', update);
     return () => mq.removeEventListener('change', update);
