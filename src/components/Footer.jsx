@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Footer({ openDownloadModal }) {
   return (
-    <footer className="w-full bg-white pt-12 pb-16 select-none">
+    <footer id="footer-section" className="w-full bg-white pt-12 pb-16 select-none">
       <div className="max-width-container space-y-8">
 
         {/* Main Blue Panel Card matching Figma Node 764:179487 3 ki jagah E karna h bs*/}
@@ -17,7 +17,7 @@ export default function Footer({ openDownloadModal }) {
           <img
             src="/assets/footer/FooterBg.svg"
             alt=""
-            className="hidden lg:block absolute inset-0 w-full h-full opacity-30 pointer-events-none z-0 object-cover"
+            className="hidden lg:block absolute bottom-0 left-0 w-full h-[70%] opacity-30 pointer-events-none z-0 object-cover"
           />
           {/* "GeSIM" wordmark bars, layered above the background pattern */}
           <img

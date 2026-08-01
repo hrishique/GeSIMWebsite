@@ -38,7 +38,7 @@ export default function FAQ({ openContactModal }) {
   };
 
   return (
-    <section className="w-full bg-white border-t border-slate-100 py-16 lg:py-24 select-none">
+    <section id="faq-section" className="w-full bg-white border-t border-slate-100 py-16 lg:py-24 select-none">
       <div className="max-width-container">
         
         {/* 2-Column Grid Layout (items-start so accordion aligns with top of heading) */}

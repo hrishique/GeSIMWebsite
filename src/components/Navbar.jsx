@@ -8,21 +8,27 @@ export default function Navbar({ activePage, setActivePage, openDownloadModal, o
     { id: 'blog', label: 'Blog' },
     { id: 'docs', label: 'Docs' },
     { id: 'faq', label: 'FAQ' },
-    { id: 'contact', label: 'Contact', action: openContactModal }
+    { id: 'contact', label: 'Contact' }
   ];
 
+  const scrollToSection = (sectionId) => {
+    if (activePage !== 'home') {
+      setActivePage('home');
+      setTimeout(() => {
+        document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   const handleNavClick = (item) => {
-    if (item.action) {
-      item.action();
-    } else if (item.id === 'faq') {
-      if (activePage !== 'home') {
-        setActivePage('home');
-        setTimeout(() => {
-          document.getElementById('faq-section')?.scrollIntoView({ behavior: 'smooth' });
-        }, 100);
-      } else {
-        document.getElementById('faq-section')?.scrollIntoView({ behavior: 'smooth' });
-      }
+    if (item.id === 'faq') {
+      scrollToSection('faq-section');
+    } else if (item.id === 'contact') {
+      scrollToSection('footer-section');
+    } else if (item.id === 'docs') {
+      window.open('https://gesim.gitbook.io/gesim', '_blank', 'noopener,noreferrer');
     } else {
       setActivePage(item.id);
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -56,7 +62,7 @@ export default function Navbar({ activePage, setActivePage, openDownloadModal, o
               key={item.id}
               onClick={() => handleNavClick(item)}
               className={`text-sm font-medium transition-colors border-none bg-transparent cursor-pointer ${
-                activePage === item.id && !item.action
+                activePage === item.id && item.id !== 'faq' && item.id !== 'contact'
                   ? 'text-slate-900 font-bold'
                   : 'text-slate-600 hover:text-slate-900'
               }`}
