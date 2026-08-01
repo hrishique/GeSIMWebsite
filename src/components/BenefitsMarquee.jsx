@@ -57,47 +57,43 @@ export default function BenefitsMarquee() {
   const marqueeCards = [...cards, ...cards];
 
   return (
-    <section className="w-full bg-[#F7F9FB] border-t border-slate-200/60 py-16 lg:py-24 overflow-hidden select-none">
+    <section className="w-full bg-[#F7F9FB] border-t border-slate-200/60 pt-16 pb-20 lg:py-24 overflow-hidden select-none flex flex-col gap-10 sm:gap-14 lg:gap-16 text-left items-start">
       
       {/* Section Heading Inset to Content Container */}
-      <div className="max-width-container mb-10 lg:mb-14">
-        <h2 className="text-[38px] sm:text-[48px] lg:text-[54px] font-extrabold text-[#09090B] tracking-[-1.5px] leading-[1.08] font-heading">
+      <div className="max-width-container text-left w-full">
+        <h2 className="text-[38px] sm:text-[48px] lg:text-[54px] font-extrabold text-[#09090B] tracking-[-1.5px] leading-[1.08] font-heading text-left w-full m-0">
           Benefits you can get
         </h2>
       </div>
 
-      {/* Full-Bleed Infinite Horizontal Scroll Marquee Row */}
+      {/* Full-Bleed Infinite Horizontal Scroll Marquee Row (Pauses on Hover / Touch) */}
       <div className="w-full overflow-hidden">
-        <motion.div 
-          className="flex items-center gap-6 lg:gap-8 w-max"
-          animate={{ x: ['0%', '-50%'] }}
-          transition={{ duration: 32, ease: 'linear', repeat: Infinity }}
-        >
+        <div className="flex items-center gap-6 lg:gap-8 w-max animate-benefits-marquee group">
           {marqueeCards.map((card, index) => {
             const IconComponent = card.icon;
             return (
               <div 
                 key={`${card.id}-${index}`}
-                className="w-[300px] sm:w-[500px] lg:w-[540px] h-[200px] sm:h-[220px] lg:h-[240px] bg-white border border-[#F1F1F1] rounded-[20px] p-6 lg:p-8 flex flex-col justify-between flex-shrink-0"
+                className="w-[310px] sm:w-[500px] lg:w-[540px] min-h-[240px] sm:min-h-[250px] lg:min-h-[260px] h-auto bg-white border border-[#F1F1F1] rounded-[20px] p-5 sm:p-7 lg:p-8 flex flex-col justify-between flex-shrink-0 transition-transform duration-300 hover:scale-[1.02] cursor-pointer shadow-sm"
               >
                 {/* Top Icon */}
-                <div className="w-10 h-10 rounded-xl bg-slate-100 text-[#282F34] flex items-center justify-center">
-                  <IconComponent className="w-6 h-6 stroke-[2.2]" />
+                <div className="w-10 h-10 rounded-xl bg-slate-100 text-[#282F34] flex items-center justify-center mb-3">
+                  <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.2]" />
                 </div>
 
                 {/* Content */}
-                <div className="space-y-2">
-                  <h3 className="text-[24px] sm:text-[26px] lg:text-[28px] font-heading font-semibold text-[#282F34] tracking-[-0.96px] leading-[1.2]">
+                <div className="space-y-2.5">
+                  <h3 className="text-[22px] sm:text-[26px] lg:text-[28px] font-heading font-semibold text-[#282F34] tracking-[-0.8px] sm:tracking-[-0.96px] leading-[1.2]">
                     {card.heading}
                   </h3>
-                  <div className="text-[15px] sm:text-[16px] lg:text-[17px] font-body text-[#282F34]/70 leading-[1.45] tracking-[-0.22px]">
+                  <div className="text-[14px] sm:text-[16px] lg:text-[17px] font-body text-[#282F34]/70 leading-[1.5] tracking-[-0.22px]">
                     {card.subtext}
                   </div>
                 </div>
               </div>
             );
           })}
-        </motion.div>
+        </div>
       </div>
 
     </section>

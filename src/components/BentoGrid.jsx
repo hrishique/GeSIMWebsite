@@ -43,17 +43,25 @@ export default function BentoGrid({ openDownloadModal }) {
     <section className="py-24 bg-white border-t border-slate-100 text-left">
       <div className="max-width-container">
 
-        {/* Section Header */}
-        <div className="flex items-center justify-between mb-12">
-          <div>
-            <span className="text-xs font-mono font-bold text-sky-500 uppercase">Features</span>
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight mt-1">
-              Everything you need, wherever you go
-            </h2>
-          </div>
-          <div className="w-10 h-10 rounded-full border border-slate-900 flex items-center justify-center text-slate-900 shrink-0">
-            <ArrowRight className="w-5 h-5" />
-          </div>
+        {/* Section Header matching Figma Image 1 */}
+        <div className="mb-8 sm:mb-12 text-left">
+          <span className="hidden sm:block text-xs font-mono font-bold text-sky-500 uppercase tracking-wider mb-2">Features</span>
+          <h2 className="text-[32px] sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-[1.15]">
+            <span>Everything you need, </span>
+            <span className="inline-flex items-center gap-2.5 whitespace-nowrap">
+              <span>wherever you go</span>
+              <img 
+                src="/assets/mobile/bento/Arrow.svg" 
+                alt="Arrow" 
+                className="inline-block sm:hidden w-[40px] h-auto object-contain align-middle" 
+              />
+              <img 
+                src="/assets/features/Arrow.svg" 
+                alt="Arrow" 
+                className="hidden sm:inline-block w-[50px] lg:w-[59px] h-auto object-contain align-middle" 
+              />
+            </span>
+          </h2>
         </div>
 
         {/* Mobile-Only Bento Stack */}

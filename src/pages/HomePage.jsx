@@ -13,8 +13,8 @@ export default function HomePage({ openDownloadModal, openContactModal }) {
     <div className="space-y-0">
       <HeroSection openDownloadModal={openDownloadModal} />
       <HorizontalScrollSection openDownloadModal={openDownloadModal} />
-      <BenefitsMarquee />
       <BentoGrid openDownloadModal={openDownloadModal} />
+      <BenefitsMarquee />
       <DownloadCTA openDownloadModal={openDownloadModal} />
       <FAQ openContactModal={openContactModal} />
     </div>

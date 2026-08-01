@@ -1,6 +1,4 @@
 import React from 'react';
-import { SiTelegram, SiX } from 'react-icons/si';
-import { FaLinkedin } from 'react-icons/fa';
 
 export default function Footer({ openDownloadModal }) {
   return (
@@ -77,34 +75,6 @@ export default function Footer({ openDownloadModal }) {
                     alt="Get it on Google Play"
                     className="h-[34px] xs:h-[38px] sm:h-[50px] w-auto object-contain"
                   />
-                </a>
-              </div>
-
-              {/* Social Icons Row (Desktop Only per Figma Mobile Design) */}
-              <div className="hidden lg:flex items-center gap-3 pt-2">
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-colors cursor-pointer"
-                  aria-label="Telegram"
-                >
-                  <SiTelegram className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-colors cursor-pointer"
-                  aria-label="X / Twitter"
-                >
-                  <SiX className="w-4 h-4" />
-                </a>
-                <a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-colors cursor-pointer"
-                  aria-label="LinkedIn"
-                >
-                  <FaLinkedin className="w-5 h-5" />
                 </a>
               </div>
 

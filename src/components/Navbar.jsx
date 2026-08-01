@@ -34,16 +34,19 @@ export default function Navbar({ activePage, setActivePage, openDownloadModal, o
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 px-6 py-4">
       <div className="max-width-container flex items-center justify-between">
         
-        {/* GeSIM Logo Image */}
+        {/* GeSIM Logo Image & Text */}
         <button 
           onClick={() => { setActivePage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} 
-          className="flex items-center gap-2 bg-transparent border-none cursor-pointer group"
+          className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer group"
         >
           <img 
             src="/assets/GeSIMLog.png" 
             alt="GeSIM Logo" 
             className="h-8 md:h-9 w-auto object-contain transition-transform group-hover:scale-105"
           />
+          <span className="text-[20px] md:text-[22px] font-heading font-extrabold text-[#282F34] tracking-[-0.5px]">
+            GeSIM
+          </span>
         </button>
 
         {/* Desktop Navigation */}
@@ -76,9 +79,18 @@ export default function Navbar({ activePage, setActivePage, openDownloadModal, o
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="md:hidden p-2 rounded-xl bg-slate-100 text-slate-800 border-none cursor-pointer"
+          className="md:hidden w-11 h-11 rounded-[16px] bg-[#F4F6F8] hover:bg-[#EAEFF3] flex items-center justify-center border-none cursor-pointer transition-colors"
+          aria-label="Toggle Navigation Menu"
         >
-          {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          {mobileMenuOpen ? (
+            <X className="w-5 h-5 text-[#282F34]" />
+          ) : (
+            <img 
+              src="/assets/mobile/Hamburger_Menu/Hamburger.svg" 
+              alt="Menu" 
+              className="w-5 h-auto object-contain" 
+            />
+          )}
         </button>
       </div>
 

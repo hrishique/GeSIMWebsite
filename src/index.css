@@ -49,6 +49,11 @@
   100% { transform: translateX(-50%); }
 }
 
+@keyframes benefits-marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
 .animate-marquee-slow {
   display: flex;
   width: max-content;
@@ -56,6 +61,17 @@
 }
 
 .animate-marquee-slow:hover {
+  animation-play-state: paused;
+}
+
+.animate-benefits-marquee {
+  display: flex;
+  width: max-content;
+  animation: benefits-marquee 32s linear infinite;
+}
+
+.animate-benefits-marquee:hover,
+.animate-benefits-marquee:active {
   animation-play-state: paused;
 }
 

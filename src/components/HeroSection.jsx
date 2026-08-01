@@ -14,7 +14,7 @@ export default function HeroSection({ openDownloadModal }) {
   // Background 1 (Clouds): MUST fade to 0 completely by 15% scroll and unrender (ZERO clouds on Page 2)
   const bgLandscapeOpacity = useTransform(scrollYProgress, [0, 0.15], [0.9, 0]);
   const bgLandscapeDisplay = useTransform(scrollYProgress, (v) => v > 0.18 ? 'none' : 'block');
-  
+
   // Background 2 (Dotted World Map): Fades in on Page 2 over 100% PURE WHITE background (Screenshot 1)
   const bgMapOpacity = useTransform(scrollYProgress, [0.15, 0.35, 1], [0, 1, 1]);
 
@@ -27,29 +27,46 @@ export default function HeroSection({ openDownloadModal }) {
   const text2Y = useTransform(scrollYProgress, [0.35, 0.55], [30, 0]);
   const text2Display = useTransform(scrollYProgress, (v) => v < 0.2 ? 'none' : 'block');
 
-  // Mobile position: 
-  // Page 1: Anchored at bottom edge (26%) showing top half of phone screen with 0% text overlap
-  // Page 2: Slides UP smoothly to top of screen (-32%)
+  // ===========================================================================================
+  // HERO PHONE SCROLL ANIMATION TUNING
+  // You can adjust the percentage values below to test and finalize the phone's position:
+  // 
+  // - ["26%", "-32%", "-32%"]: 
+  //     "26%"  = Initial position on Page 1 (phone anchored towards the bottom half)
+  //     "-32%" = Final position on Page 2 (slides UP to top of screen so it sits above Page 2 text)
+  // ===========================================================================================
   const phoneContainerY = useTransform(scrollYProgress, [0, 0.45, 1], ["26%", "-32%", "-32%"]);
+  
+  // Phone stays 100% visible throughout the scroll sequence (does NOT disappear)
+  const phoneOpacity = 1;
 
-  // Mobile inner screen scroll translation (Your Investments at top: -14%)
+  // Mobile inner screen scroll translation (Your Investments content translation: -14%)
   const phoneInnerY = useTransform(scrollYProgress, [0, 0.45, 0.85], ["0%", "0%", "-14%"]);
 
   return (
     <section ref={targetRef} className="relative h-[220vh] bg-white text-center font-sans">
-      
+
       {/* Sticky Full-Viewport Container */}
       <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-between items-center relative bg-white">
-        
+
         {/* Background 1: Painterly Cloud Landscape (Hero 1 ONLY - 0% on Page 2) */}
-        <motion.div 
-          style={{ opacity: bgLandscapeOpacity, display: bgLandscapeDisplay }}
+        <motion.div
           className="absolute inset-0 w-full h-full bg-cover bg-bottom bg-no-repeat pointer-events-none z-0"
           style={{ backgroundImage: "url('/assets/hero_bg_landscape.png')", opacity: bgLandscapeOpacity, display: bgLandscapeDisplay }}
         />
 
+        {/* Responsive Top Linear Gradient matching Figma */}
+        <motion.div
+          style={{
+            opacity: bgLandscapeOpacity,
+            display: bgLandscapeDisplay,
+            background: 'linear-gradient(180deg, #FFF 46.9%, rgba(255, 255, 255, 0.00) 100%)'
+          }}
+          className="absolute top-0 inset-x-0 w-full h-[300px] sm:h-[1000px] lg:h-[1080px] pointer-events-none z-[1]"
+        />
+
         {/* Background 2: Clean Dotted World Map Vector on 100% PURE WHITE (Screenshot 1) */}
-        <motion.div 
+        <motion.div
           style={{ opacity: bgMapOpacity }}
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none z-0 opacity-80"
           style={{ backgroundImage: "url('/assets/clean_dotted_world_map.png')", opacity: bgMapOpacity }}
@@ -57,7 +74,7 @@ export default function HeroSection({ openDownloadModal }) {
 
         {/* Top Text Region (Page 1 Title & Subheadline - Positioned Cleanly at Top) */}
         <div className="relative z-10 w-full max-w-[1380px] px-4 sm:px-6 pt-10 md:pt-14 flex items-center justify-center">
-          <motion.div 
+          <motion.div
             style={{ opacity: text1Opacity, display: text1Display }}
             className="space-y-4 pointer-events-none flex flex-col items-center"
           >
@@ -72,7 +89,7 @@ export default function HeroSection({ openDownloadModal }) {
 
         {/* Bottom Text Region (Page 2 Title & Chips - Exact Match to Screenshot 1) */}
         <div className="absolute bottom-10 sm:bottom-14 z-10 w-full max-w-[1100px] px-6 flex items-center justify-center pointer-events-none">
-          <motion.div 
+          <motion.div
             style={{ opacity: text2Opacity, y: text2Y, display: text2Display }}
             className="space-y-4 pointer-events-auto"
           >
@@ -96,18 +113,18 @@ export default function HeroSection({ openDownloadModal }) {
           </motion.div>
         </div>
 
-        {/* Single Live Mobile Phone Container: Anchored at bottom-0 on Screen 1 with 0% text overlap */}
-        <motion.div 
-          style={{ y: phoneContainerY }}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20"
+        {/* Single Live Mobile Phone Container: 76% viewport width on mobile (12% side margins), slides to top/center & fades out */}
+        <motion.div
+          style={{ y: phoneContainerY, opacity: phoneOpacity }}
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 w-[76vw] max-w-[340px] sm:max-w-[420px] md:max-w-[480px] sm:w-[480px]"
         >
-          <div className="w-[420px] sm:w-[480px] h-[840px] sm:h-[940px] relative overflow-hidden flex flex-col select-none rounded-[50px]">
-            <div className="w-full h-full relative overflow-hidden rounded-[50px] bg-transparent">
-              <motion.img 
+          <div className="w-full aspect-[420/840] relative overflow-hidden flex flex-col select-none rounded-[36px] sm:rounded-[50px]">
+            <div className="w-full h-full relative overflow-hidden rounded-[36px] sm:rounded-[50px] bg-transparent">
+              <motion.img
                 style={{ y: phoneInnerY }}
-                src="/assets/hero_phone_screen.png" 
-                alt="GeSIM iPhone App Display" 
-                className="w-full h-auto object-cover relative z-10 rounded-[50px]"
+                src="/assets/hero_phone_screen.png"
+                alt="GeSIM iPhone App Display"
+                className="w-full h-auto object-cover relative z-10 rounded-[36px] sm:rounded-[50px]"
               />
             </div>
           </div>
