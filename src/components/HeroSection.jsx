@@ -1,6 +1,5 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Shield, CreditCard, DollarSign } from 'lucide-react';
 
 export default function HeroSection({ openDownloadModal }) {
   const targetRef = useRef(null);
@@ -96,17 +95,17 @@ export default function HeroSection({ openDownloadModal }) {
             <h2 className="text-[36px] sm:text-[48px] lg:text-[54px] font-extrabold text-[#282f34] tracking-[-1.5px] leading-[1.1] font-heading">
               Built for the way world connects today
             </h2>
-            <div className="flex flex-wrap justify-center items-center gap-6 sm:gap-8 pt-1">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-3.5 sm:gap-8 pt-1">
               <span className="flex items-center gap-2.5 text-[#282f34] font-semibold text-base sm:text-lg">
-                <Shield className="w-5 h-5 text-slate-400" />
+                <img src="/assets/Home/HomePrivateIcon.svg" alt="Stay Private" className="w-6 h-6 object-contain" />
                 <span>Stay Private</span>
               </span>
               <span className="flex items-center gap-2.5 text-[#282f34] font-semibold text-base sm:text-lg">
-                <DollarSign className="w-5 h-5 text-slate-400" />
+                <img src="/assets/Home/HomeInvestIcon.svg" alt="Invest Globally" className="w-6 h-6 object-contain" />
                 <span>Invest Globally</span>
               </span>
               <span className="flex items-center gap-2.5 text-[#282f34] font-semibold text-base sm:text-lg">
-                <CreditCard className="w-5 h-5 text-slate-400" />
+                <img src="/assets/Home/HomeSpendIcon.svg" alt="Spend Anywhere" className="w-6 h-6 object-contain" />
                 <span>Spend Anywhere</span>
               </span>
             </div>

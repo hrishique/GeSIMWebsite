@@ -52,15 +52,15 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
 
             {/* Inline Row: Dark Icon Tile + Heading */}
             <div className="flex items-center gap-4 lg:gap-5">
-              <motion.div
+              <motion.img
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="w-12 h-12 shrink-0 rounded-2xl bg-[#18181B] text-white shadow-sm flex items-center justify-center"
-              >
-                <BarChart3 className="w-6 h-6 stroke-[2.5]" />
-              </motion.div>
+                src="/assets/ConnectIcon.svg"
+                alt="Connect Icon"
+                className="w-12 h-12 shrink-0 object-contain"
+              />
 
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
