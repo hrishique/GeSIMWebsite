@@ -115,7 +115,7 @@ export default function HeroSection({ openDownloadModal }) {
         {/* Single Live Mobile Phone Container: 76% viewport width on mobile (12% side margins), slides to top/center & fades out */}
         <motion.div
           style={{ y: phoneContainerY, opacity: phoneOpacity }}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 w-[61vw] max-w-[272px] sm:max-w-[336px] md:max-w-[384px] sm:w-[384px]"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 w-[50vw] max-w-[250px] sm:max-w-[300px] md:max-w-[350px] sm:w-[350px]"
         >
           <div className="w-full aspect-[420/840] relative overflow-hidden flex flex-col select-none rounded-[36px] sm:rounded-[50px]">
             <div className="w-full h-full relative overflow-hidden rounded-[36px] sm:rounded-[50px] bg-transparent">
