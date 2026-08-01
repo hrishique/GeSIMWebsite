@@ -90,7 +90,7 @@ export default function PosterMarquee() {
   };
 
   return (
-    <section className="w-screen h-screen flex-shrink-0 flex flex-col justify-center py-16 lg:py-24 bg-white overflow-hidden select-none">
+    <section className="w-full min-h-screen lg:w-screen lg:h-screen flex-shrink-0 flex flex-col justify-center py-16 lg:py-24 bg-white overflow-hidden select-none">
       <div className="w-full flex flex-col gap-6 lg:gap-10 justify-center">
         
         {/* Row 1 (Blue CONNECT Pair positioned left-of-center ~38%) */}
