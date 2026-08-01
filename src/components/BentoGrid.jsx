@@ -56,8 +56,17 @@ export default function BentoGrid({ openDownloadModal }) {
           </div>
         </div>
 
+        {/* Mobile-Only Bento Stack */}
+        <div className="lg:hidden flex flex-col gap-4 mb-20">
+          <img src="/assets/mobile/bento/ESimCard.png" alt="Global eSIM: instant mobile data across 190+ countries" className="w-full aspect-[354/582] object-cover rounded-[18px]" />
+          <img src="/assets/mobile/bento/BrowseSecurely.png" alt="Browse Securely: secure built-in VPN access" className="w-full aspect-[354/283] object-cover rounded-[18px]" />
+          <img src="/assets/mobile/bento/InvestPrivately.png" alt="Invest Privately: trade stocks, crypto, commodities and stablecoins" className="w-full aspect-[354/283] object-cover rounded-[18px]" />
+          <img src="/assets/mobile/bento/VirtualNumbers.png" alt="Virtual Numbers: call, receive OTPs and verify accounts from anywhere" className="w-full aspect-[354/344] object-cover rounded-[18px]" />
+          <img src="/assets/mobile/bento/SpendFreely.png" alt="Spend Freely: off-ramp, pay globally, and manage your money" className="w-full aspect-[354/221] object-cover rounded-[18px]" />
+        </div>
+
         {/* Native 5 Bento Tiles Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
+        <div className="hidden lg:grid grid-cols-3 gap-6 mb-20">
 
           {/* Column 1: Tile 1 (Global eSIM) */}
           <div className="md:col-span-1 rounded-[18px] bg-[#f7f9fb] border border-[#f1f1f1] p-8 flex flex-col justify-end relative overflow-hidden min-h-[560px] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:scale-[1.01] cursor-default">
