@@ -45,9 +45,9 @@ export default function BenefitsMarquee() {
       icon: TrendingUp,
       heading: 'Invest in SpaceX & global markets',
       subtext: (
-        <span className="flex items-center flex-wrap gap-1">
-          <span>Access tokenized stocks like SpaceX, Tesla and hundreds of global equities.</span>
-          <img src="/assets/Page9/Page9LogoGroup.png" alt="SpaceX, Nvidia, Tesla, Apple" className="inline-block h-[22px] object-contain ml-1 self-center" />
+        <span>
+          Access tokenized stocks like SpaceX, Tesla and hundreds of global equities.{' '}
+          <img src="/assets/Page9/Page9LogoGroup.png" alt="SpaceX, Nvidia, Tesla, Apple" className="inline-block h-[22px] object-contain align-text-bottom ml-0.5" />
         </span>
       )
     }

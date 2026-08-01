@@ -30,11 +30,11 @@ export default function HeroSection({ openDownloadModal }) {
   // HERO PHONE SCROLL ANIMATION TUNING
   // You can adjust the percentage values below to test and finalize the phone's position:
   // 
-  // - ["26%", "-32%", "-32%"]: 
-  //     "26%"  = Initial position on Page 1 (phone anchored towards the bottom half)
+  // - ["16%", "-32%", "-32%"]: 
+  //     "16%"  = Initial position on Page 1 (phone anchored towards the bottom half)
   //     "-32%" = Final position on Page 2 (slides UP to top of screen so it sits above Page 2 text)
   // ===========================================================================================
-  const phoneContainerY = useTransform(scrollYProgress, [0, 0.45, 1], ["26%", "-32%", "-32%"]);
+  const phoneContainerY = useTransform(scrollYProgress, [0, 0.45, 1], ["16%", "-32%", "-32%"]);
   
   // Phone stays 100% visible throughout the scroll sequence (does NOT disappear)
   const phoneOpacity = 1;

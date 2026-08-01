@@ -9,27 +9,27 @@ export default function FAQ({ openContactModal }) {
   const faqItems = [
     {
       question: 'Why do I need to install an app?',
-      answer: 'eSIM provisioning requires a mobile OS. The app is your control centre for connectivity - plans, VPN, virtual number, everything in one place'
+      answer: 'eSIM provisioning requires a mobile OS. The app is your control centre for connectivity — plans, VPN, virtual number, everything in one place.'
     },
     {
       question: 'Do you need my ID or passport?',
-      answer: 'Answer coming soon.'
+      answer: 'No. GeSIM does not require ID verification, passport scans, or KYC for core connectivity services like eSIM data plans, VPN, and virtual numbers. For financial features such as investing and spending, a lightweight verification may be needed to comply with regulations — but we keep it minimal and never store more than necessary.'
     },
     {
       question: "Can my regular carrier see I'm using GeSIM?",
-      answer: 'Answer coming soon.'
+      answer: "No. When you activate a GeSIM eSIM plan, your data traffic routes through our network, not your carrier's. Your regular carrier will see that an eSIM profile is installed, but they cannot monitor your browsing, calls, or usage on the GeSIM line. With VPN enabled, even your ISP cannot inspect your traffic."
     },
     {
       question: 'Where is GeSIM available?',
-      answer: 'Answer coming soon.'
+      answer: 'GeSIM provides eSIM data coverage in 190+ countries and territories worldwide. Virtual numbers are available across 15+ countries. Financial services including investing and the virtual spending card are accessible globally, subject to local regulatory availability. Check the app for the latest country list.'
     },
     {
       question: 'How do I pay?',
-      answer: 'Answer coming soon.'
+      answer: 'Currently, you can pay using USDC (stablecoin) and card payments (Visa, Mastercard). Apple Pay support is coming soon. All payments are processed securely with end-to-end encryption. There are no hidden fees — the price you see is the price you pay.'
     },
     {
       question: 'Is my data safe?',
-      answer: 'Answer coming soon.'
+      answer: 'Absolutely. GeSIM uses military-grade AES-256 encryption for all data in transit and at rest. Our built-in VPN ensures your browsing stays private from ISPs, public Wi-Fi snoopers, and third-party trackers. We follow a strict no-logs policy — we do not store, sell, or share your browsing history, connection logs, or personal data with anyone.'
     }
   ];
 

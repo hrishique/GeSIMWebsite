@@ -83,7 +83,7 @@ export default function BentoGrid({ openDownloadModal }) {
             <div className="absolute inset-x-0 bottom-0 h-[39%] bg-gradient-to-b from-[rgba(247,249,251,0)] to-[#f7f9fb] to-[40.756%] z-[5] pointer-events-none" />
             <div className="relative z-10 space-y-3">
               <span className="text-xs font-mono font-bold uppercase text-sky-500">Telecom Layer</span>
-              <h3 className="text-2xl font-extrabold text-slate-900">Global eSIM</h3>
+              <h3 className="text-2xl font-extrabold font-heading text-slate-900">Global eSIM</h3>
               <p className="text-slate-500 text-sm leading-relaxed max-w-xs">
                 Stay connected with instant mobile data across 190+ countries
               </p>
@@ -114,7 +114,7 @@ export default function BentoGrid({ openDownloadModal }) {
                 <Shield className="w-10 h-10 text-white/90" strokeWidth={1.2} />
               </div>
               <div className="relative z-10 space-y-1">
-                <h4 className="text-xl font-bold text-slate-900">Browse Securely</h4>
+                <h4 className="text-2xl font-extrabold font-heading text-slate-900">Browse Securely</h4>
                 <p className="text-slate-500 text-sm leading-relaxed">Protect every connection with secure built-in VPN access</p>
               </div>
             </div>
@@ -171,7 +171,7 @@ export default function BentoGrid({ openDownloadModal }) {
                 ))}
               </div>
               <div className="relative z-10 space-y-1 mt-6">
-                <h4 className="text-xl font-bold text-slate-900">Invest Privately</h4>
+                <h4 className="text-2xl font-extrabold font-heading text-slate-900">Invest Privately</h4>
                 <p className="text-slate-500 text-sm leading-relaxed">Trade stocks, crypto, commodities and stablecoins securely</p>
               </div>
             </div>
