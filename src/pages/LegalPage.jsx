@@ -1,69 +1,25 @@
 import React from 'react';
+import { legalContent } from '../data/legalContent';
 
 export default function LegalPage({ type }) {
-  const titles = {
-    terms: 'Terms & Conditions',
-    privacy: 'Privacy Policy',
-    license: 'Software & Protocol License'
-  };
-
+  const page = legalContent[type];
+  if (!page) return null;
   return (
-    <div className="py-16 bg-white text-left">
+    <div className="py-16 lg:py-20 bg-white text-left">
       <div className="max-width-container max-w-4xl mx-auto space-y-8">
-        
         <div className="space-y-3 border-b border-slate-100 pb-6">
-          <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight">
-            {titles[type] || 'Legal Notice'}
-          </h1>
-          <p className="text-slate-500 text-xs font-mono">
-            Last Updated: July 2026 • GeSIM Global Communications Protocol
-          </p>
+          <h1 className="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight font-heading">{page.title}</h1>
+          {page.lastUpdated && <p className="text-slate-500 text-xs font-mono">{page.lastUpdated}</p>}
         </div>
-
-        <div className="rounded-3xl bg-slate-50 border border-slate-200 p-8 md:p-12 space-y-6 text-slate-700 text-base leading-relaxed">
-          {type === 'privacy' && (
-            <>
-              <h2 className="text-xl font-bold text-slate-900">1. Zero Log Architecture</h2>
-              <p>
-                GeSIM operates under strict Zero Identity and Zero Log principles. We do not store, log, or track user browsing activities, destination IP addresses, payload contents, or personal identity metrics.
-              </p>
-
-              <h2 className="text-xl font-bold text-slate-900 mt-6">2. Cryptographic Authentication</h2>
-              <p>
-                Account creation and authentication are derived exclusively from Web3 public keys or ephemeral device keys. No passport, government ID, or credit card billing name is stored on our servers.
-              </p>
-
-              <h2 className="text-xl font-bold text-slate-900 mt-6">3. Cellular Roaming Metadata</h2>
-              <p>
-                Cellular roaming profiles are provisioned through bulk B2B enterprise roaming agreements. Host cellular network operators receive only anonymous roaming session identifiers required to maintain physical tower connectivity.
-              </p>
-            </>
-          )}
-
-          {type === 'terms' && (
-            <>
-              <h2 className="text-xl font-bold text-slate-900">1. Acceptable Use</h2>
-              <p>
-                GeSIM services provide privacy-enhanced global mobile connectivity and financial tools. Users agree to utilize the services in compliance with international telecommunication standards.
-              </p>
-
-              <h2 className="text-xl font-bold text-slate-900 mt-6">2. Service Availability & Roaming Speed</h2>
-              <p>
-                Mobile data speeds (5G, 4G LTE) depend on local roaming partner cell tower coverage and regional network infrastructure.
-              </p>
-            </>
-          )}
-
-          {type === 'license' && (
-            <>
-              <h2 className="text-xl font-bold text-slate-900">Open Protocol License</h2>
-              <p>
-                The GeSIM client software and smart contract interfaces are licensed under open source protocol terms. Permission is granted to build decentralized interfaces interacting with the GeSIM smart contract contracts.
-              </p>
-            </>
-          )}
+        {page.intro && <p className="text-lg text-slate-600 leading-relaxed">{page.intro}</p>}
+        <div className="space-y-8">
+          {page.sections.map((s, idx) => (
+            <div key={s.n || s.heading || idx} className="space-y-2">
+              <h2 className="text-xl md:text-2xl font-bold text-slate-900">{page.unnumbered ? s.heading : `${s.n}. ${s.heading}`}</h2>
+              <p className="text-slate-700 text-base leading-relaxed">{s.body}</p>
+            </div>
+          ))}
         </div>
-
       </div>
     </div>
   );

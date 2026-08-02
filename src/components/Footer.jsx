@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Footer({ openDownloadModal }) {
   return (
@@ -149,15 +150,15 @@ export default function Footer({ openDownloadModal }) {
 
           {/* Legal Links */}
           <div className="flex items-center gap-6">
-            <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-slate-800 transition-colors cursor-pointer">
+            <Link to="/license" className="hover:text-slate-800 transition-colors cursor-pointer">
               License
-            </a>
-            <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-slate-800 transition-colors cursor-pointer">
+            </Link>
+            <Link to="/terms" className="hover:text-slate-800 transition-colors cursor-pointer">
               Terms & Conditions
-            </a>
-            <a href="#" onClick={(e) => e.preventDefault()} className="hover:text-slate-800 transition-colors cursor-pointer">
+            </Link>
+            <Link to="/trust" className="hover:text-slate-800 transition-colors cursor-pointer">
               Privacy Policy
-            </a>
+            </Link>
           </div>
 
         </div>
