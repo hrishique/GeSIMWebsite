@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-export default function BlogPage({ onSelectArticle }) {
+export default function BlogPage() {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
@@ -117,7 +119,7 @@ export default function BlogPage({ onSelectArticle }) {
           {filteredArticles.map((art) => (
             <div
               key={art.id}
-              onClick={() => onSelectArticle(art.id)}
+              onClick={() => { navigate('/blog/' + art.id); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
               className="group cursor-pointer space-y-4 flex flex-col justify-between"
             >
               <div className="space-y-4">

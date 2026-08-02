@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-export default function Navbar({ activePage, setActivePage, openDownloadModal, openContactModal }) {
+export default function Navbar({ openDownloadModal, openContactModal }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const navItems = [
     { id: 'blog', label: 'Blog' },
@@ -12,8 +14,8 @@ export default function Navbar({ activePage, setActivePage, openDownloadModal, o
   ];
 
   const scrollToSection = (sectionId) => {
-    if (activePage !== 'home') {
-      setActivePage('home');
+    if (window.location.pathname !== '/') {
+      navigate('/');
       setTimeout(() => {
         document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
       }, 100);
@@ -30,7 +32,7 @@ export default function Navbar({ activePage, setActivePage, openDownloadModal, o
     } else if (item.id === 'docs') {
       window.open('https://gesim.gitbook.io/gesim', '_blank', 'noopener,noreferrer');
     } else {
-      setActivePage(item.id);
+      navigate('/' + item.id);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     setMobileMenuOpen(false);
@@ -42,7 +44,7 @@ export default function Navbar({ activePage, setActivePage, openDownloadModal, o
         
         {/* GeSIM Logo Image & Text */}
         <button 
-          onClick={() => { setActivePage('home'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} 
+          onClick={() => { navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} 
           className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer group"
         >
           <img 
@@ -62,7 +64,7 @@ export default function Navbar({ activePage, setActivePage, openDownloadModal, o
               key={item.id}
               onClick={() => handleNavClick(item)}
               className={`text-sm font-medium transition-colors border-none bg-transparent cursor-pointer ${
-                activePage === item.id && item.id !== 'faq' && item.id !== 'contact'
+                window.location.pathname === '/' + item.id && item.id !== 'faq' && item.id !== 'contact'
                   ? 'text-slate-900 font-bold'
                   : 'text-slate-600 hover:text-slate-900'
               }`}

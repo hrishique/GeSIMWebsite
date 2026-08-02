@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import DownloadModal from './components/DownloadModal';
@@ -11,69 +13,36 @@ import DocsPage from './pages/DocsPage';
 import LegalPage from './pages/LegalPage';
 
 export default function App() {
-  const [activePage, setActivePage] = useState('home');
-  const [selectedArticleId, setSelectedArticleId] = useState(null);
-  
   const [downloadModalOpen, setDownloadModalOpen] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
 
   const openDownloadModal = () => setDownloadModalOpen(true);
   const openContactModal = () => setContactModalOpen(true);
 
-  const handleSelectArticle = (articleId) => {
-    setSelectedArticleId(articleId);
-    setActivePage('article');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleBackToBlog = () => {
-    setActivePage('blog');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <div className="min-h-screen flex flex-col bg-white text-slate-900 font-sans selection:bg-sky-500 selection:text-white">
+      <ScrollToTop />
       
       {/* Top Glass Navbar */}
       <Navbar 
-        activePage={activePage}
-        setActivePage={setActivePage}
         openDownloadModal={openDownloadModal}
         openContactModal={openContactModal}
       />
 
       {/* Main Content */}
       <main className="flex-1">
-        {activePage === 'home' && (
-          <HomePage 
-            openDownloadModal={openDownloadModal} 
-            openContactModal={openContactModal} 
-          />
-        )}
-
-        {activePage === 'blog' && (
-          <BlogPage onSelectArticle={handleSelectArticle} />
-        )}
-
-        {activePage === 'article' && (
-          <ArticleDetailPage 
-            articleId={selectedArticleId} 
-            onBack={handleBackToBlog} 
-          />
-        )}
-
-        {activePage === 'docs' && (
-          <DocsPage openDownloadModal={openDownloadModal} />
-        )}
-
-        {['terms', 'privacy', 'license'].includes(activePage) && (
-          <LegalPage type={activePage} />
-        )}
+        <Routes>
+          <Route path="/" element={<HomePage openDownloadModal={openDownloadModal} openContactModal={openContactModal} />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:articleId" element={<ArticleDetailPage />} />
+          <Route path="/terms" element={<LegalPage type="terms" />} />
+          <Route path="/trust" element={<LegalPage type="privacy" />} />
+          <Route path="/license" element={<LegalPage type="license" />} />
+        </Routes>
       </main>
 
       {/* Footer */}
       <Footer 
-        setActivePage={setActivePage}
         openContactModal={openContactModal}
         openDownloadModal={openDownloadModal}
       />

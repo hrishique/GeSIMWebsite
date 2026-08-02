@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { ArrowLeft, Share2, Check } from 'lucide-react';
+import { useParams, useNavigate } from 'react-router-dom';
 
-export default function ArticleDetailPage({ articleId, onBack }) {
+export default function ArticleDetailPage() {
+  const { articleId } = useParams();
+  const navigate = useNavigate();
   const [copied, setCopied] = useState(false);
 
   const handleShare = () => {
@@ -17,7 +20,7 @@ export default function ArticleDetailPage({ articleId, onBack }) {
         {/* Top Header Bar */}
         <div className="flex items-center justify-between text-xs font-mono text-slate-500 border-b border-slate-100 pb-4">
           <button 
-            onClick={onBack}
+            onClick={() => { navigate('/blog'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             className="flex items-center gap-1.5 font-bold text-slate-900 bg-transparent border-none cursor-pointer hover:text-sky-500"
           >
             <ArrowLeft className="w-4 h-4" />
