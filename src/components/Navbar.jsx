@@ -46,7 +46,7 @@ export default function Navbar({ activePage, setActivePage, openDownloadModal, o
           className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer group"
         >
           <img 
-            src="/assets/GeSIMLog.png" 
+            src="/assets/GeSIMLog.webp" 
             alt="GeSIM Logo" 
             className="h-8 md:h-9 w-auto object-contain transition-transform group-hover:scale-105"
           />

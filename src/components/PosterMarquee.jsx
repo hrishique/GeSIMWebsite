@@ -94,9 +94,9 @@ export default function PosterMarquee() {
       {/* Mobile view: single clean image asset matching Figma */}
       <section className="lg:hidden w-full py-10 px-2 bg-white flex justify-center items-center">
         <img
-          src="/assets/mobile/benefits/BenefitsMarquee.png"
+          src="/assets/mobile/benefits/BenefitsMarquee.webp"
           alt="GeSIM Features"
-          className="w-full max-w-[370px] h-auto object-contain"
+          loading="lazy" className="w-full max-w-[370px] h-auto object-contain"
         />
       </section>
 

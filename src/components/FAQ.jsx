@@ -56,9 +56,9 @@ export default function FAQ({ openContactModal }) {
             <div className="w-full bg-white border border-[#F1F1F1] rounded-[18px] p-6 lg:p-7 flex flex-col justify-between relative overflow-hidden shadow-sm">
               {/* Soft landscape background photo filling lower/bg portion */}
               <img 
-                src="/assets/FAQ/FAQBG.png" 
+                src="/assets/FAQ/FAQBG.webp" 
                 alt="" 
-                className="absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none z-0" 
+                loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none z-0" 
               />
 
               <div className="relative z-10 space-y-2 mb-6">

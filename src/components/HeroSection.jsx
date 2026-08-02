@@ -46,7 +46,7 @@ export default function HeroSection({ openDownloadModal }) {
         {/* Background 1: Painterly Cloud Landscape (Hero 1 ONLY - 0% on Page 2) */}
         <motion.div
           className="absolute inset-0 w-full h-full bg-cover bg-bottom bg-no-repeat pointer-events-none z-0"
-          style={{ backgroundImage: "url('/assets/hero_bg_landscape.png')", opacity: bgLandscapeOpacity, display: bgLandscapeDisplay }}
+          style={{ backgroundImage: "url('/assets/hero_bg_landscape.webp')", opacity: bgLandscapeOpacity, display: bgLandscapeDisplay }}
         />
 
         {/* Responsive Top Linear Gradient matching Figma */}
@@ -63,7 +63,7 @@ export default function HeroSection({ openDownloadModal }) {
         <motion.div
           style={{ opacity: bgMapOpacity }}
           className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none z-0 opacity-80"
-          style={{ backgroundImage: "url('/assets/clean_dotted_world_map.png')", opacity: bgMapOpacity }}
+          style={{ backgroundImage: "url('/assets/clean_dotted_world_map.webp')", opacity: bgMapOpacity }}
         />
 
         {/* Top Text Region (Page 1 Title & Subheadline - Positioned Cleanly at Top) */}
@@ -107,7 +107,7 @@ export default function HeroSection({ openDownloadModal }) {
           </motion.div>
         </div>
 
-        {/* Single Live Mobile Phone Container: Reduced desktop size by ~18% (390px) so top of phone does not overlap text above */}
+        {/* Single Live Mobile Phone Container: High-performance WebP format */}
         <motion.div
           style={{ y: phoneContainerY, opacity: phoneOpacity }}
           className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 w-[72vw] max-w-[300px] sm:max-w-[360px] md:max-w-[390px] sm:w-[390px]"
@@ -116,8 +116,10 @@ export default function HeroSection({ openDownloadModal }) {
             <div className="w-full h-full relative overflow-hidden rounded-[36px] sm:rounded-[50px] bg-transparent">
               <motion.img
                 style={{ y: phoneInnerY }}
-                src="/assets/hero_phone_screen.png"
+                src="/assets/hero_phone_screen.webp"
                 alt="GeSIM iPhone App Display"
+                fetchPriority="high"
+                decoding="async"
                 className="w-full h-auto object-cover relative z-10 rounded-[36px] sm:rounded-[50px]"
               />
             </div>

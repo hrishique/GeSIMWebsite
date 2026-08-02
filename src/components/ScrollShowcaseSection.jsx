@@ -16,7 +16,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
           {/* Left Column: Sky-Blue Card (#00A3FF) with 2-Beat Animated Device Mockup (Node 764:175237 / 764:178706) */}
           <div className="lg:col-span-6 flex justify-center w-full">
             <img
-              src="/assets/mobile/showcase/ConnectCard.png"
+              src="/assets/mobile/showcase/ConnectCard.webp"
               alt="Connect without borders"
               className="lg:hidden w-full max-w-[354px] aspect-[354/468] object-contain"
             />
@@ -40,7 +40,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
-                src="/assets/connect_phone_only.png"
+                src="/assets/connect_phone_only.webp"
                 alt="Connect Without Borders Mobile App Display"
                 className="h-[113%] max-w-none object-contain relative z-10 mb-[6vh]"
               />
@@ -98,7 +98,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
           {/* Left Column: Invest layered card (Figma node 764:178718) */}
           <div className="lg:col-span-6 flex justify-center w-full">
             <img
-              src="/assets/mobile/showcase/InvestCard.png"
+              src="/assets/mobile/showcase/InvestCard.webp"
               alt="Grow wealth, keep privacy"
               className="lg:hidden w-full max-w-[354px] aspect-[354/468] object-contain"
             />
@@ -132,7 +132,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
-                src="/assets/invest/InvestPhone.png"
+                src="/assets/invest/InvestPhone.webp"
                 alt="GeSIM Money app invest screen"
                 className="absolute left-1/2 -translate-x-1/2 top-[8.8%] w-[62%] h-auto max-w-none object-contain z-20 drop-shadow-xl"
               />
@@ -213,7 +213,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
           {/* Left Column: Spend layered card (Figma node 764:178780) */}
           <div className="lg:col-span-6 flex justify-center w-full">
             <img
-              src="/assets/mobile/showcase/SpendCard.png"
+              src="/assets/mobile/showcase/SpendCard.webp"
               alt="Spend like a local, anywhere"
               className="lg:hidden w-full max-w-[354px] aspect-[354/468] object-contain"
             />
@@ -231,7 +231,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 whileInView={{ opacity: 0.56, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                src="/assets/spend/SpendScreenPhone.png"
+                src="/assets/spend/SpendScreenPhone.webp"
                 alt="GeSIM Money app spend screen"
                 className="absolute left-[15.9%] top-[-26.2%] w-[60.9%] h-[110.7%] object-contain z-[1] pointer-events-none"
               />
@@ -242,7 +242,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.8, delay: 0.28, ease: "easeOut" }}
-                src="/assets/spend/SpendScreenCard.png"
+                src="/assets/spend/SpendScreenCard.webp"
                 alt="GeSIM Visa Card"
                 className="absolute left-[28%] top-[11.6%] w-[61%] h-[89%] object-contain z-[2] drop-shadow-2xl pointer-events-none"
               />

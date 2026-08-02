@@ -10,7 +10,7 @@ export default function DownloadCTA({ openDownloadModal }) {
         <div className="lg:hidden pt-20">
           <div className="relative w-full max-w-[354px] mx-auto aspect-[354/440] rounded-[18px] overflow-hidden shadow-lg flex flex-col items-center justify-end">
             {/* Background gradient */}
-            <img src="/assets/App Links/AppLinksBG.png" alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0" />
+            <img src="/assets/App Links/AppLinksBG.webp" alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0" />
             {/* Heading */}
             <h2 className="relative z-10 text-[32px] font-heading font-semibold text-white text-center tracking-[-0.96px] leading-[1.08] px-6 mb-5 max-w-[286px]">
               Your private network starts here...
@@ -28,7 +28,7 @@ export default function DownloadCTA({ openDownloadModal }) {
               </a>
             </div>
             {/* Phone overhanging the top */}
-            <img src="/assets/App Links/AppLinksMobileImg.png" alt="GeSIM Mobile Interface" className="absolute left-1/2 -translate-x-1/2 top-[-70px] w-[260px] h-auto object-contain z-20 pointer-events-none drop-shadow-2xl" />
+            <img src="/assets/App Links/AppLinksMobileImg.webp" alt="GeSIM Mobile Interface" className="absolute left-1/2 -translate-x-1/2 top-[-70px] w-[260px] h-auto object-contain z-20 pointer-events-none drop-shadow-2xl" />
           </div>
         </div>
 
@@ -37,7 +37,7 @@ export default function DownloadCTA({ openDownloadModal }) {
 
           {/* Background Blue Gradient Image */}
           <img
-            src="/assets/App Links/AppLinksBG.png"
+            src="/assets/App Links/AppLinksBG.webp"
             alt=""
             className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0"
           />
@@ -49,7 +49,7 @@ export default function DownloadCTA({ openDownloadModal }) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              src="/assets/App Links/AppLinksMobileImg.png"
+              src="/assets/App Links/AppLinksMobileImg.webp"
               alt="GeSIM Mobile Interface"
               className="h-[370px] sm:h-[400px] lg:h-[420px] w-auto max-w-none object-contain -translate-x-6 lg:-translate-x-8 pointer-events-none drop-shadow-2xl"
             />
