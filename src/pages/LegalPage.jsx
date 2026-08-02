@@ -16,7 +16,7 @@ export default function LegalPage({ type }) {
           {page.sections.map((s, idx) => (
             <div key={s.n || s.heading || idx} className="space-y-2">
               <h2 className="text-xl md:text-2xl font-bold text-slate-900">{page.unnumbered ? s.heading : `${s.n}. ${s.heading}`}</h2>
-              <p className="text-slate-700 text-base leading-relaxed">{s.body}</p>
+              <p className="text-slate-700 text-base leading-relaxed break-words">{s.body}</p>
             </div>
           ))}
         </div>

@@ -1,0 +1,52 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" fill="none" role="img" aria-label="Phone protected by a shield">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#5eead4"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f0f9ff"/>
+      <stop offset="1" stop-color="#e0f2fe"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#38bdf8"/>
+      <stop offset="1" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect width="800" height="400" fill="url(#bg)"/>
+
+  <!-- soft decorative shapes -->
+  <circle cx="110" cy="60" r="150" fill="#ffffff" opacity="0.18"/>
+  <circle cx="710" cy="360" r="180" fill="#ffffff" opacity="0.16"/>
+  <circle cx="648" cy="72" r="7" fill="#ffffff" opacity="0.7"/>
+  <circle cx="150" cy="332" r="6" fill="#ffffff" opacity="0.6"/>
+  <circle cx="588" cy="316" r="5" fill="#0284c7" opacity="0.45"/>
+
+  <!-- phone -->
+  <g transform="translate(300 72)">
+    <rect x="0" y="0" width="150" height="256" rx="30" fill="#ffffff"/>
+    <rect x="12" y="12" width="126" height="232" rx="20" fill="url(#screen)"/>
+    <rect x="58" y="22" width="34" height="7" rx="3.5" fill="#cbd5e1"/>
+    <rect x="30" y="150" width="90" height="8" rx="4" fill="#bae6fd"/>
+    <rect x="30" y="170" width="64" height="8" rx="4" fill="#bae6fd"/>
+    <rect x="30" y="190" width="76" height="8" rx="4" fill="#bae6fd"/>
+  </g>
+
+  <!-- shield badge with lock, overlapping the phone -->
+  <g transform="translate(358 148)">
+    <path d="M72 0 L138 26 V80 C138 130 108 162 72 180 C36 162 6 130 6 80 V26 Z" fill="url(#shield)"/>
+    <rect x="50" y="82" width="44" height="36" rx="7" fill="#ffffff"/>
+    <path d="M57 82 V69 a15 15 0 0 1 30 0 V82" stroke="#ffffff" stroke-width="8" fill="none"/>
+    <circle cx="72" cy="97" r="6" fill="#0284c7"/>
+    <rect x="69" y="97" width="6" height="13" rx="3" fill="#0284c7"/>
+  </g>
+
+  <!-- signal strength bars -->
+  <g transform="translate(122 158)">
+    <rect x="0"  y="42" width="13" height="22" rx="3.5" fill="#0284c7" opacity="0.55"/>
+    <rect x="22" y="26" width="13" height="38" rx="3.5" fill="#0284c7" opacity="0.75"/>
+    <rect x="44" y="8"  width="13" height="56" rx="3.5" fill="#0284c7" opacity="0.95"/>
+  </g>
+</svg>

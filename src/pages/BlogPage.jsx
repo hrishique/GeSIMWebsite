@@ -11,26 +11,6 @@ export default function BlogPage() {
 
   const articles = [
     {
-      id: 'carrier-logs-six-things',
-      category: 'Privacy',
-      date: '12 Nov 2025',
-      title: 'Six things your carrier logs before you even unlock your phone',
-      excerpt: 'A practical walkthrough of the metadata trail a normal SIM leaves behind - and the specific parts GeSIM removes from that chain. No hand-waving, no FUD.',
-      featured: true,
-      bgGradient: 'from-amber-100 to-sky-100',
-      icon: '🔒'
-    },
-    {
-      id: 'esim-60-seconds',
-      category: 'Privacy',
-      date: '12 Nov 2025',
-      title: 'How we provision an eSIM in 60 seconds',
-      excerpt: 'A look at the handshake between your wallet, our MVNO layer, and the carrier. No KYC loops, no call centres.',
-      featured: false,
-      bgGradient: 'from-sky-400 to-cyan-400',
-      icon: '💳'
-    },
-    {
       id: 'phone-number-weakest-link',
       category: 'Privacy',
       date: '22 Oct 2025',
@@ -38,37 +18,8 @@ export default function BlogPage() {
       excerpt: 'Phone numbers are a modern ID card. Here\'s how that happened — and what a virtual number actually solves.',
       featured: false,
       bgGradient: 'from-sky-300 to-teal-300',
-      icon: '🛡️'
-    },
-    {
-      id: 'planetary-roaming-layer',
-      category: 'Engineering',
-      date: '8 Oct 2025',
-      title: 'Building a planetary roaming layer from scratch',
-      excerpt: 'We wanted one eSIM profile that works from Lisbon to Tokyo without resetting identity. Here\'s what we had to stitch together.',
-      featured: false,
-      bgGradient: 'from-blue-400 to-cyan-500',
-      icon: '🌐'
-    },
-    {
-      id: '30-days-gesim-travel',
-      category: 'Field notes',
-      date: '19 Sep 2025',
-      title: "We traveled with only GeSIM for 30 days. Here's what broke.",
-      excerpt: 'Two factor auth, ride-sharing apps, and the occasional bank hold. An honest account of where a private eSIM is already smooth - and where it isn\'t.',
-      featured: false,
-      bgGradient: 'from-cyan-200 to-blue-200',
-      icon: '✈️'
-    },
-    {
-      id: 'v0-6-release-notes',
-      category: 'Product',
-      date: '3 Sep 2025',
-      title: "What's new in v0.6: faster provisioning, cleaner wallet",
-      excerpt: 'A small release that took six weeks. The short version — activation is now under forty seconds and the Funds screen finally does what it says.',
-      featured: false,
-      bgGradient: 'from-amber-200 to-yellow-100',
-      icon: '✨'
+      icon: '🛡️',
+      image: '/assets/blog/phone-number-weakest-link.svg'
     }
   ];
 
@@ -123,16 +74,31 @@ export default function BlogPage() {
               className="group cursor-pointer space-y-4 flex flex-col justify-between"
             >
               <div className="space-y-4">
-                <div className={`w-full h-48 rounded-2xl bg-gradient-to-tr ${art.bgGradient} p-6 flex items-center justify-center relative overflow-hidden group-hover:shadow-md transition-shadow`}>
-                  {art.featured && (
-                    <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-red-500 text-white font-bold text-[9px] uppercase tracking-wider">
-                      Featured
+                {art.image ? (
+                  <div className="w-full h-48 rounded-2xl relative overflow-hidden group-hover:shadow-md transition-shadow">
+                    {art.featured && (
+                      <span className="absolute top-3 left-3 z-10 px-2.5 py-0.5 rounded-full bg-red-500 text-white font-bold text-[9px] uppercase tracking-wider">
+                        Featured
+                      </span>
+                    )}
+                    <img
+                      src={art.image}
+                      alt={art.title}
+                      className="w-full h-48 object-cover rounded-2xl transform group-hover:scale-105 transition-transform"
+                    />
+                  </div>
+                ) : (
+                  <div className={`w-full h-48 rounded-2xl bg-gradient-to-tr ${art.bgGradient} p-6 flex items-center justify-center relative overflow-hidden group-hover:shadow-md transition-shadow`}>
+                    {art.featured && (
+                      <span className="absolute top-3 left-3 px-2.5 py-0.5 rounded-full bg-red-500 text-white font-bold text-[9px] uppercase tracking-wider">
+                        Featured
+                      </span>
+                    )}
+                    <span className="text-5xl transform group-hover:scale-110 transition-transform">
+                      {art.icon}
                     </span>
-                  )}
-                  <span className="text-5xl transform group-hover:scale-110 transition-transform">
-                    {art.icon}
-                  </span>
-                </div>
+                  </div>
+                )}
 
                 <div className="space-y-2">
                   <div className="text-xs font-mono text-slate-400">
