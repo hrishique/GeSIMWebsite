@@ -107,10 +107,10 @@ export default function HeroSection({ openDownloadModal }) {
           </motion.div>
         </div>
 
-        {/* Single Live Mobile Phone Container: Anchored at bottom-0 with original width/height proportions */}
+        {/* Single Live Mobile Phone Container: Reduced desktop size by ~18% (390px) so top of phone does not overlap text above */}
         <motion.div
           style={{ y: phoneContainerY, opacity: phoneOpacity }}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 w-[76vw] max-w-[340px] sm:max-w-[420px] md:max-w-[480px] sm:w-[480px]"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 w-[72vw] max-w-[300px] sm:max-w-[360px] md:max-w-[390px] sm:w-[390px]"
         >
           <div className="w-full aspect-[420/840] relative overflow-hidden flex flex-col select-none rounded-[36px] sm:rounded-[50px]">
             <div className="w-full h-full relative overflow-hidden rounded-[36px] sm:rounded-[50px] bg-transparent">
