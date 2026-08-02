@@ -26,15 +26,10 @@ export default function HeroSection({ openDownloadModal }) {
   const text2Y = useTransform(scrollYProgress, [0.35, 0.55], [30, 0]);
   const text2Display = useTransform(scrollYProgress, (v) => v < 0.2 ? 'none' : 'block');
 
-  // ===========================================================================================
-  // HERO PHONE SCROLL ANIMATION TUNING
-  // You can adjust the percentage values below to test and finalize the phone's position:
-  // 
-  // - ["16%", "-32%", "-32%"]: 
-  //     "16%"  = Initial position on Page 1 (phone anchored towards the bottom half)
-  //     "-32%" = Final position on Page 2 (slides UP to top of screen so it sits above Page 2 text)
-  // ===========================================================================================
-  const phoneContainerY = useTransform(scrollYProgress, [0, 0.45, 1], ["16%", "-32%", "-32%"]);
+  // Hero Phone Scroll Animation Tuning:
+  // - "26%": Original committed Page 1 resting position (anchored at bottom-0, 0% text overlap)
+  // - "-58%": Page 2 top position (slides UPWARDS right under the navbar, closing the top gap on Page 2)
+  const phoneContainerY = useTransform(scrollYProgress, [0, 0.45, 1], ["26%", "-58%", "-58%"]);
 
   // Phone stays 100% visible throughout the scroll sequence (does NOT disappear)
   const phoneOpacity = 1;
@@ -112,10 +107,10 @@ export default function HeroSection({ openDownloadModal }) {
           </motion.div>
         </div>
 
-        {/* Single Live Mobile Phone Container: 76% viewport width on mobile (12% side margins), slides to top/center & fades out */}
+        {/* Single Live Mobile Phone Container: Anchored at bottom-0 with original width/height proportions */}
         <motion.div
           style={{ y: phoneContainerY, opacity: phoneOpacity }}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 w-[50vw] max-w-[250px] sm:max-w-[300px] md:max-w-[350px] sm:w-[350px]"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 w-[76vw] max-w-[340px] sm:max-w-[420px] md:max-w-[480px] sm:w-[480px]"
         >
           <div className="w-full aspect-[420/840] relative overflow-hidden flex flex-col select-none rounded-[36px] sm:rounded-[50px]">
             <div className="w-full h-full relative overflow-hidden rounded-[36px] sm:rounded-[50px] bg-transparent">

@@ -24,7 +24,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
             <motion.div
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4, ease: "easeOut" }}
               className="hidden lg:flex w-full h-[68vh] max-h-[640px] min-h-[460px] rounded-[36px] bg-[#00A3FF] p-0 justify-center items-end shadow-lg relative overflow-hidden"
             >
@@ -38,7 +38,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
               <motion.img
                 initial={{ opacity: 0, y: -70 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.5, delay: 0.25, ease: "easeOut" }}
                 src="/assets/connect_phone_only.png"
                 alt="Connect Without Borders Mobile App Display"
@@ -50,22 +50,22 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
           {/* Right Column: Vertical Stack (Icon Tile -> Heading -> Subtext) matching Node 764:175237 */}
           <div className="lg:col-span-6 flex flex-col justify-center space-y-6 p-[2%]">
 
-            {/* Inline Row: Dark Icon Tile + Heading */}
-            <div className="flex items-center gap-4 lg:gap-5">
+            {/* Row / Stack: Dark Icon Tile + Heading (stacked on mobile, inline on desktop) */}
+            <div className="flex flex-col items-start gap-3 lg:flex-row lg:items-center lg:gap-5">
               <motion.img
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
                 src="/assets/ConnectIcon.svg"
                 alt="Connect Icon"
-                className="w-12 h-12 shrink-0 object-contain"
+                className="w-10 h-10 shrink-0 object-contain"
               />
 
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="text-[28px] sm:text-[36px] lg:text-[34px] xl:text-[40px] lg:whitespace-nowrap font-extrabold text-[#09090B] tracking-[-1.5px] leading-[1.08] font-heading"
               >
@@ -77,7 +77,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4, delay: 0.3 }}
               className="text-[18px] sm:text-[20px] text-[#71717A] font-normal leading-[1.45] max-w-[520px] font-body"
             >
@@ -108,7 +108,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
               <motion.img
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.6, delay: 0.55, ease: "easeOut" }}
                 src="/assets/invest/InvestGrid.svg"
                 alt=""
@@ -119,7 +119,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
               <motion.img
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.6, delay: 0.55, ease: "easeOut" }}
                 src="/assets/invest/InvestChart.svg"
                 alt=""
@@ -130,7 +130,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
               <motion.img
                 initial={{ opacity: 0, y: 80 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 src="/assets/invest/InvestPhone.png"
                 alt="GeSIM Money app invest screen"
@@ -141,7 +141,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
               <motion.img
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.45, delay: 0.2, ease: "easeOut" }}
                 src="/assets/invest/InvestArrowUp.svg"
                 alt=""
@@ -152,7 +152,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
               <motion.img
                 initial={{ opacity: 0, y: -40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.45, delay: 0.32, ease: "easeOut" }}
                 src="/assets/invest/InvestArrowDown.svg"
                 alt=""
@@ -165,22 +165,22 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
           {/* Right Column: Title & Subheadline */}
           <div className="lg:col-span-6 flex flex-col justify-center space-y-6 p-[2%]">
 
-            {/* Inline Row: Dark Icon Tile + Heading */}
-            <div className="flex items-center gap-4 lg:gap-5">
+            {/* Row / Stack: Dark Icon Tile + Heading (stacked on mobile, inline on desktop) */}
+            <div className="flex flex-col items-start gap-3 lg:flex-row lg:items-center lg:gap-5">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="w-12 h-12 shrink-0 rounded-2xl bg-[#18181B] text-white shadow-sm flex items-center justify-center"
+                className="w-10 h-10 shrink-0 rounded-xl bg-[#18181B] text-white shadow-sm flex items-center justify-center"
               >
-                <TrendingUp className="w-6 h-6 stroke-[2.5]" />
+                <TrendingUp className="w-5 h-5 stroke-[2.5]" />
               </motion.div>
 
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="text-[28px] sm:text-[36px] lg:text-[34px] xl:text-[40px] lg:whitespace-nowrap font-extrabold text-[#09090B] tracking-[-1.5px] leading-[1.08] font-heading"
               >
@@ -192,7 +192,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4, delay: 0.3 }}
               className="text-[18px] sm:text-[20px] text-[#71717A] font-normal leading-[1.45] max-w-[520px] font-body"
             >
@@ -229,7 +229,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
               <motion.img
                 initial={{ opacity: 0, y: -60 }}
                 whileInView={{ opacity: 0.56, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
                 src="/assets/spend/SpendScreenPhone.png"
                 alt="GeSIM Money app spend screen"
@@ -240,7 +240,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
               <motion.img
                 initial={{ opacity: 0, y: -60 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.8, delay: 0.28, ease: "easeOut" }}
                 src="/assets/spend/SpendScreenCard.png"
                 alt="GeSIM Visa Card"
@@ -253,22 +253,22 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
           {/* Right Column: Title & Subheadline */}
           <div className="lg:col-span-6 flex flex-col justify-center space-y-6 p-[2%]">
 
-            {/* Inline Row: Dark Icon Tile + Heading */}
-            <div className="flex items-center gap-4 lg:gap-5">
+            {/* Row / Stack: Dark Icon Tile + Heading (stacked on mobile, inline on desktop) */}
+            <div className="flex flex-col items-start gap-3 lg:flex-row lg:items-center lg:gap-5">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="w-12 h-12 shrink-0 rounded-2xl bg-[#18181B] text-white shadow-sm flex items-center justify-center"
+                className="w-10 h-10 shrink-0 rounded-xl bg-[#18181B] text-white shadow-sm flex items-center justify-center"
               >
-                <Tag className="w-6 h-6 stroke-[2.5]" />
+                <Tag className="w-5 h-5 stroke-[2.5]" />
               </motion.div>
 
               <motion.h2
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="text-[28px] sm:text-[36px] lg:text-[34px] xl:text-[40px] lg:whitespace-nowrap font-extrabold text-[#09090B] tracking-[-1.5px] leading-[1.08] font-heading"
               >
@@ -280,7 +280,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4, delay: 0.3 }}
               className="text-[18px] sm:text-[20px] text-[#71717A] font-normal leading-[1.45] max-w-[520px] font-body"
             >
