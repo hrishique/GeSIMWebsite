@@ -50,15 +50,15 @@ export default function BentoGrid({ openDownloadModal }) {
             <span>Everything you need, </span>
             <span className="inline-flex items-center gap-2.5 whitespace-nowrap">
               <span>wherever you go</span>
-              <img 
-                src="/assets/mobile/bento/Arrow.svg" 
-                alt="Arrow" 
-                className="inline-block sm:hidden w-[40px] h-auto object-contain align-middle" 
+              <img
+                src="/assets/mobile/bento/Arrow.svg"
+                alt="Arrow"
+                className="inline-block sm:hidden w-[40px] h-auto object-contain align-middle"
               />
-              <img 
-                src="/assets/features/Arrow.svg" 
-                alt="Arrow" 
-                className="hidden sm:inline-block w-[50px] lg:w-[59px] h-auto object-contain align-middle" 
+              <img
+                src="/assets/features/Arrow.svg"
+                alt="Arrow"
+                className="hidden sm:inline-block w-[50px] lg:w-[59px] h-auto object-contain align-middle"
               />
             </span>
           </h2>
@@ -89,7 +89,7 @@ export default function BentoGrid({ openDownloadModal }) {
               </p>
               <div className="pt-2">
                 <button onClick={() => setESimModalOpen(true)} className="dark-pill-button text-xs py-2.5 px-6">
-                  Download Now
+                  Get Access
                 </button>
               </div>
             </div>

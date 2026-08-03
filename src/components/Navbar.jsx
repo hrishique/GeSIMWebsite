@@ -57,30 +57,29 @@ export default function Navbar({ openDownloadModal, openContactModal }) {
           </span>
         </button>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-9">
-          {navItems.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleNavClick(item)}
-              className={`text-sm font-medium transition-colors border-none bg-transparent cursor-pointer ${
-                window.location.pathname === '/' + item.id && item.id !== 'faq' && item.id !== 'contact'
-                  ? 'text-slate-900 font-bold'
-                  : 'text-slate-600 hover:text-slate-900'
-              }`}
-            >
-              {item.label}
-            </button>
-          ))}
-        </nav>
+        {/* Desktop Navigation & Download Button (grouped to be adjacent on the right side) */}
+        <div className="hidden md:flex items-center gap-9">
+          <nav className="flex items-center gap-9">
+            {navItems.map((item) => (
+              <button
+                key={item.id}
+                onClick={() => handleNavClick(item)}
+                className={`text-sm font-medium transition-colors border-none bg-transparent cursor-pointer ${
+                  window.location.pathname === '/' + item.id && item.id !== 'faq' && item.id !== 'contact'
+                    ? 'text-slate-900 font-bold'
+                    : 'text-slate-600 hover:text-slate-900'
+                }`}
+              >
+                {item.label}
+              </button>
+            ))}
+          </nav>
 
-        {/* CTA Button */}
-        <div className="hidden md:flex items-center">
           <button 
             onClick={openDownloadModal}
             className="dark-pill-button text-sm px-6 py-2.5"
           >
-            Download
+            Get Access
           </button>
         </div>
 
@@ -119,7 +118,7 @@ export default function Navbar({ openDownloadModal, openContactModal }) {
             onClick={() => { setMobileMenuOpen(false); openDownloadModal(); }}
             className="dark-pill-button justify-center mt-2"
           >
-            Download
+            Get Access
           </button>
         </div>
       )}

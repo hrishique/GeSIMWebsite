@@ -116,40 +116,52 @@ export default function BlogPage() {
           ))}
         </div>
 
-        {/* Monthly Newsletter Box (Frame 151) */}
-        <div className="p-8 md:p-12 rounded-3xl bg-slate-50 border border-slate-200/80 relative overflow-hidden mt-16">
-          <div className="grid md:grid-cols-12 gap-8 items-center">
-            
-            <div className="md:col-span-5 flex justify-center">
-              <div className="w-56 h-36 rounded-2xl bg-amber-50 border border-amber-200 p-4 flex flex-col justify-center text-center space-y-2 shadow-xs font-mono text-xs">
-                <span className="text-amber-800 font-bold">from: gesim.xyz</span>
-                <span className="text-slate-400">● Private Envelope</span>
-              </div>
-            </div>
+        {/* Monthly Newsletter Box (Figma node 792:13322) */}
+        <div className="relative mt-16 overflow-hidden rounded-[18px] border border-[#f1f1f1] bg-white">
 
-            <div className="md:col-span-7 space-y-4">
-              <h3 className="text-2xl md:text-3xl font-extrabold text-slate-900">
-                Privacy, delivered monthly.
-              </h3>
-              <p className="text-slate-500 text-sm">
-                One email each month with product updates, new insights, and what's next for the private internet.
-              </p>
+          {/* Landscape background — faded, whitened toward the top */}
+          <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+            <img
+              src="/assets/blog/newsletter_bg.jpg"
+              alt=""
+              className="h-full w-full object-cover opacity-40"
+            />
+            <div className="absolute inset-x-0 top-0 h-3/4 bg-gradient-to-b from-white/85 to-transparent" />
+          </div>
 
-              <form onSubmit={handleSubscribe} className="flex flex-wrap items-center gap-3 pt-2">
-                <input 
-                  type="email" 
-                  required
-                  value={newsletterEmail}
-                  onChange={(e) => setNewsletterEmail(e.target.value)}
-                  placeholder="whats you email id?"
-                  className="flex-1 min-w-[240px] px-4 py-3 rounded-full bg-white border border-slate-300 text-slate-900 placeholder-slate-400 text-sm focus:outline-none focus:border-sky-500"
-                />
-                <button type="submit" className="dark-pill-button text-xs py-3 px-8">
-                  {subscribed ? 'Subscribed ✓' : 'Proceed'}
-                </button>
-              </form>
-            </div>
+          {/* Envelope illustration, bleeding off the left edge (desktop only) */}
+          <img
+            src="/assets/blog/newsletter_envelope.png"
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute top-4 left-[-40px] hidden w-[340px] rotate-[20.72deg] md:block lg:left-[-48px] lg:w-[430px]"
+          />
 
+          {/* Content — right half */}
+          <div className="relative flex flex-col gap-4 px-6 py-10 sm:px-10 md:min-h-[320px] md:justify-center md:py-12 md:pl-[47%] md:pr-10">
+            <h3 className="text-3xl font-extrabold text-[#282f34] md:text-[42px] md:leading-[1.15]">
+              Privacy, delivered monthly.
+            </h3>
+            <p className="max-w-[460px] text-base leading-relaxed text-[#282f34]/60 md:text-[20px] md:leading-7">
+              One email each month with product updates, new insights, and what's next for the private internet.
+            </p>
+
+            <form onSubmit={handleSubscribe} className="flex flex-wrap items-center gap-3 pt-2">
+              <input
+                type="email"
+                required
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
+                placeholder="whats you email id?"
+                className="h-10 w-full max-w-[372px] rounded-[12px] border border-[#f1f1f1] bg-white px-[13px] text-sm text-[#282f34] placeholder:text-[#282f34]/40 focus:border-[#282f34]/30 focus:outline-none"
+              />
+              <button
+                type="submit"
+                className="h-10 min-w-[110px] rounded-full border border-white/20 bg-[#282f34] px-6 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-[1px] hover:bg-[#3a4147]"
+              >
+                {subscribed ? 'Subscribed ✓' : 'Proceed'}
+              </button>
+            </form>
           </div>
         </div>
 

@@ -79,7 +79,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4, delay: 0.3 }}
-              className="text-[18px] sm:text-[20px] text-[#71717A] font-normal leading-[1.45] max-w-[520px] font-body"
+              className="text-[18px] sm:text-[20px] text-[#71717A] font-normal leading-[1.45] max-w-[520px] lg:max-w-[620px] font-body"
             >
               Everything you need to stay connected globally, from instant everyday eSIM to private VPN and virtual numbers.
             </motion.p>
@@ -142,7 +142,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.45, delay: 0.2, ease: "easeOut" }}
+                transition={{ duration: 1.0, delay: 0.3, ease: "easeOut" }}
                 src="/assets/invest/InvestArrowUp.svg"
                 alt=""
                 className="absolute left-[14.5%] top-[42.7%] w-[11.4%] z-30 pointer-events-none"
@@ -153,7 +153,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 initial={{ opacity: 0, y: -40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.45, delay: 0.32, ease: "easeOut" }}
+                transition={{ duration: 1.0, delay: 0.6, ease: "easeOut" }}
                 src="/assets/invest/InvestArrowDown.svg"
                 alt=""
                 className="absolute left-[74%] top-[72%] w-[11.4%] z-30 pointer-events-none"
@@ -194,7 +194,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4, delay: 0.3 }}
-              className="text-[18px] sm:text-[20px] text-[#71717A] font-normal leading-[1.45] max-w-[520px] font-body"
+              className="text-[18px] sm:text-[20px] text-[#71717A] font-normal leading-[1.45] max-w-[520px] lg:max-w-[620px] font-body"
             >
               Invest in stocks, cryptocurrencies, commodities, and stable assets through a privacy-first experience designed for modern finance.
             </motion.p>
@@ -282,7 +282,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.4, delay: 0.3 }}
-              className="text-[18px] sm:text-[20px] text-[#71717A] font-normal leading-[1.45] max-w-[520px] font-body"
+              className="text-[18px] sm:text-[20px] text-[#71717A] font-normal leading-[1.45] max-w-[520px] lg:max-w-[620px] font-body"
             >
               Pay globally with your GeSIM Card, whether you're buying coffee around the corner or booking flights across continents.
             </motion.p>

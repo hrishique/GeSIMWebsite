@@ -142,7 +142,7 @@ export default function Footer({ openDownloadModal }) {
         <div className="flex flex-col-reverse sm:flex-row items-center justify-between gap-4 text-[13px] sm:text-[14px] text-slate-500 font-body px-2">
 
           {/* Copyright & Disclaimer */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 font-body">
             <span className="font-medium text-slate-700">©2026 GeSIM</span>
             <span>•</span>
             <span>Not available where restricted by law</span>
