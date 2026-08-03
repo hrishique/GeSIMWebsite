@@ -57,7 +57,7 @@ export default function PosterMarquee() {
     }
 
     return (
-      <div 
+      <div
         key={`pill-${text}-${index}`}
         className={`px-10 lg:px-16 py-4 lg:py-7 rounded-full border-[6px] lg:border-[10px] flex items-center justify-center flex-shrink-0 transition-transform ${styleClasses}`}
       >
@@ -80,7 +80,7 @@ export default function PosterMarquee() {
     }
 
     return (
-      <div 
+      <div
         key={`icon-${index}`}
         className={`w-[88px] h-[88px] lg:w-[128px] lg:h-[128px] rounded-full flex items-center justify-center flex-shrink-0 transition-transform ${tileClasses}`}
       >
@@ -94,7 +94,7 @@ export default function PosterMarquee() {
       {/* Mobile view: single clean image asset matching Figma */}
       <section className="lg:hidden w-full py-10 px-2 bg-white flex justify-center items-center">
         <img
-          src="/assets/mobile/benefits/BenefitsMarquee.webp"
+          src="/assets/mobile/benefits/BenefitsMarquee.png"
           alt="GeSIM Features"
           loading="lazy" className="w-full max-w-[370px] h-auto object-contain"
         />
@@ -103,14 +103,14 @@ export default function PosterMarquee() {
       {/* Desktop view: 3 animated pill rows */}
       <section className="hidden lg:flex w-screen h-screen flex-shrink-0 flex-col justify-center py-24 bg-white overflow-hidden select-none">
         <div className="w-full flex flex-col gap-10 justify-center">
-          
+
           {/* Row 1 (Blue CONNECT Pair positioned left-of-center ~38%) */}
           <div className="w-full overflow-hidden flex justify-center">
-            <motion.div 
+            <motion.div
               className="flex items-center gap-8 whitespace-nowrap -translate-x-[14%]"
             >
-              {row1Items.map((item, idx) => 
-                item.type === 'pill' 
+              {row1Items.map((item, idx) =>
+                item.type === 'pill'
                   ? renderPill(item.text, item.variant, idx)
                   : renderIconTile(item.icon, item.variant, idx)
               )}
@@ -119,11 +119,11 @@ export default function PosterMarquee() {
 
           {/* Row 2 (Orange INVEST Pair positioned dead center ~50%) */}
           <div className="w-full overflow-hidden flex justify-center">
-            <motion.div 
+            <motion.div
               className="flex items-center gap-8 whitespace-nowrap translate-x-[0%]"
             >
-              {row2Items.map((item, idx) => 
-                item.type === 'pill' 
+              {row2Items.map((item, idx) =>
+                item.type === 'pill'
                   ? renderPill(item.text, item.variant, idx)
                   : renderIconTile(item.icon, item.variant, idx)
               )}
@@ -132,11 +132,11 @@ export default function PosterMarquee() {
 
           {/* Row 3 (Purple SPEND Pair positioned right-of-center ~62%) */}
           <div className="w-full overflow-hidden flex justify-center">
-            <motion.div 
+            <motion.div
               className="flex items-center gap-8 whitespace-nowrap translate-x-[14%]"
             >
-              {row3Items.map((item, idx) => 
-                item.type === 'pill' 
+              {row3Items.map((item, idx) =>
+                item.type === 'pill'
                   ? renderPill(item.text, item.variant, idx)
                   : renderIconTile(item.icon, item.variant, idx)
               )}

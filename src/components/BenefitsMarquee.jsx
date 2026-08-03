@@ -74,7 +74,7 @@ export default function BenefitsMarquee() {
             return (
               <div 
                 key={`${card.id}-${index}`}
-                className="w-auto sm:w-[500px] lg:w-[540px] min-h-[220px] sm:h-[260px] lg:h-[270px] bg-white border border-[#F1F1F1] rounded-[20px] p-5 sm:p-7 lg:p-8 flex flex-col justify-between flex-shrink-0 transition-transform duration-300 hover:scale-[1.02] cursor-pointer shadow-sm"
+                className="w-auto sm:w-[500px] lg:w-[540px] min-h-[220px] sm:h-[260px] lg:h-[270px] bg-white border border-[#F1F1F1] rounded-[20px] p-5 sm:p-7 lg:p-8 flex flex-col justify-center flex-shrink-0 transition-transform duration-300 hover:scale-[1.02] cursor-pointer shadow-sm"
               >
                 {/* Top Icon */}
                 <div className="w-10 h-10 rounded-xl bg-slate-100 text-[#282F34] flex items-center justify-center mb-3">

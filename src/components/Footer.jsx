@@ -143,7 +143,7 @@ export default function Footer({ openDownloadModal }) {
 
           {/* Copyright & Disclaimer */}
           <div className="flex items-center gap-2 font-body">
-            <span className="font-medium text-slate-700">©2026 GeSIM</span>
+            <span>©2026 GeSIM</span>
             <span>•</span>
             <span>Not available where restricted by law</span>
           </div>
