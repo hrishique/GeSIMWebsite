@@ -21,21 +21,23 @@ export default function HeroSection({ openDownloadModal }) {
   const text1Opacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
   const text1Display = useTransform(scrollYProgress, (v) => v > 0.18 ? 'none' : 'block');
 
-  // Page 2 Headline & Badges: Fades in cleanly on Page 2
-  const text2Opacity = useTransform(scrollYProgress, [0.35, 0.55, 1], [0, 1, 1]);
-  const text2Y = useTransform(scrollYProgress, [0.35, 0.55], [30, 0]);
-  const text2Display = useTransform(scrollYProgress, (v) => v < 0.2 ? 'none' : 'block');
+  // Page 2 Headline & Badges: appear (NO fade) once the phone has risen up to the navbar
+  // (the rise finishes at 0.85). It then stays fully visible and simply scrolls up with the
+  // page like normal content — no fade-in and, importantly, no fade-out.
+  const text2Display = useTransform(scrollYProgress, (v) => v < 0.84 ? 'none' : 'block');
 
   // Hero Phone Scroll Animation Tuning:
-  // - "26%": Original committed Page 1 resting position (anchored at bottom-0, 0% text overlap)
-  // - "-58%": Page 2 top position (slides UPWARDS right under the navbar, closing the top gap on Page 2)
-  const phoneContainerY = useTransform(scrollYProgress, [0, 0.45, 1], ["26%", "-58%", "-58%"]);
+  //  [0 -> 0.12]  : phone rises from its resting spot to a fully-visible "stopped" position
+  //  [0.12 -> 0.7]: HOLD there while the screen scrolls through the long home screen
+  //  [0.72 -> 0.85]: phone rises up to its Page-2 position ("-58%") and stops
+  const phoneContainerY = useTransform(scrollYProgress, [0, 0.12, 0.72, 0.85, 1], ["26%", "-10%", "-10%", "-58%", "-58%"]);
 
   // Phone stays 100% visible throughout the scroll sequence (does NOT disappear)
   const phoneOpacity = 1;
 
-  // Mobile inner screen scroll translation (Your Investments content translation: -14%)
-  const phoneInnerY = useTransform(scrollYProgress, [0, 0.45, 0.85], ["0%", "0%", "-14%"]);
+  // Inner screen pan: scrolls the long home-screen render up inside the frame (stops just
+  // above the tab bar, which stays fixed via the frame image behind).
+  const phoneInnerY = useTransform(scrollYProgress, [0, 0.16, 0.7], ["-4%", "-4%", "-40%"]);
 
   return (
     <section ref={targetRef} className="relative h-[220vh] bg-white text-center font-sans">
@@ -84,7 +86,7 @@ export default function HeroSection({ openDownloadModal }) {
         {/* Bottom Text Region (Page 2 Title & Chips - Exact Match to Screenshot 1) */}
         <div className="absolute bottom-10 sm:bottom-14 z-10 w-full max-w-[1100px] px-6 flex items-center justify-center pointer-events-none">
           <motion.div
-            style={{ opacity: text2Opacity, y: text2Y, display: text2Display }}
+            style={{ display: text2Display }}
             className="space-y-4 pointer-events-auto"
           >
             <h2 className="text-[36px] sm:text-[48px] lg:text-[54px] font-extrabold text-[#282f34] tracking-[-1.5px] leading-[1.1] font-heading">
@@ -112,16 +114,32 @@ export default function HeroSection({ openDownloadModal }) {
           style={{ y: phoneContainerY, opacity: phoneOpacity }}
           className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 w-[72vw] max-w-[300px] sm:max-w-[360px] md:max-w-[390px] sm:w-[390px]"
         >
-          <div className="w-full aspect-[420/840] relative overflow-hidden flex flex-col select-none rounded-[36px] sm:rounded-[50px]">
-            <div className="w-full h-full relative overflow-hidden rounded-[36px] sm:rounded-[50px] bg-transparent">
-              <motion.img
-                style={{ y: phoneInnerY }}
-                src="/assets/hero_phone_screen.webp"
-                alt="GeSIM iPhone App Display"
-                fetchPriority="high"
-                decoding="async"
-                className="w-full h-auto object-cover relative z-10 rounded-[36px] sm:rounded-[50px]"
-              />
+          <div className="relative w-full aspect-[1990/4096] select-none">
+            {/* Base framed iPhone (BEHIND): frame, bottom border, and the FIXED bottom nav */}
+            <img
+              src="/assets/hero_phone_screen.webp"
+              alt="GeSIM iPhone App Display"
+              fetchPriority="high"
+              decoding="async"
+              className="pointer-events-none absolute inset-0 z-0 w-full h-full object-contain"
+            />
+            {/* Scrolling app screen (ON TOP, inset to the screen window). A solid white
+                backdrop fully hides the frame image's own baked content (so only ONE
+                screen shows), while the frame's status bar/island (above) and tab bar
+                (below) stay fixed. The inner clip stops a few px short of the nav to leave
+                a clean gap above it. */}
+            <div
+              className="absolute z-10 overflow-clip bg-white"
+              style={{ top: '6%', left: '5.2%', right: '5.2%', bottom: '10.5%' }}
+            >
+              <div className="absolute inset-x-0 top-0 overflow-clip" style={{ bottom: '12px' }}>
+                <motion.img
+                  style={{ y: phoneInnerY }}
+                  src="/assets/hero_home_screen_tall.jpg"
+                  alt=""
+                  className="w-full h-auto"
+                />
+              </div>
             </div>
           </div>
         </motion.div>

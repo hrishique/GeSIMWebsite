@@ -74,7 +74,7 @@ export default function BenefitsMarquee() {
             return (
               <div 
                 key={`${card.id}-${index}`}
-                className="w-[310px] sm:w-[500px] lg:w-[540px] min-h-[240px] sm:min-h-[250px] lg:min-h-[260px] h-auto bg-white border border-[#F1F1F1] rounded-[20px] p-5 sm:p-7 lg:p-8 flex flex-col justify-between flex-shrink-0 transition-transform duration-300 hover:scale-[1.02] cursor-pointer shadow-sm"
+                className="w-auto sm:w-[500px] lg:w-[540px] min-h-[220px] sm:h-[260px] lg:h-[270px] bg-white border border-[#F1F1F1] rounded-[20px] p-5 sm:p-7 lg:p-8 flex flex-col justify-between flex-shrink-0 transition-transform duration-300 hover:scale-[1.02] cursor-pointer shadow-sm"
               >
                 {/* Top Icon */}
                 <div className="w-10 h-10 rounded-xl bg-slate-100 text-[#282F34] flex items-center justify-center mb-3">
@@ -83,7 +83,7 @@ export default function BenefitsMarquee() {
 
                 {/* Content */}
                 <div className="space-y-2.5">
-                  <h3 className="text-[22px] sm:text-[26px] lg:text-[28px] font-heading font-semibold text-[#282F34] tracking-[-0.8px] sm:tracking-[-0.96px] leading-[1.2]">
+                  <h3 className="text-[22px] sm:text-[26px] lg:text-[28px] font-heading font-semibold text-[#282F34] tracking-[-0.8px] sm:tracking-[-0.96px] leading-[1.2] whitespace-nowrap sm:whitespace-normal">
                     {card.heading}
                   </h3>
                   <div className="text-[14px] sm:text-[16px] lg:text-[17px] font-body text-[#282F34]/70 leading-[1.5] tracking-[-0.22px]">
