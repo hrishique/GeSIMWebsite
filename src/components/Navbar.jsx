@@ -17,7 +17,7 @@ export default function Navbar({ openDownloadModal, openContactModal }) {
 
   const navItems = [
     { id: 'blog', label: 'Blog' },
-    { id: 'docs', label: 'Docs' },
+    // { id: 'docs', label: 'Docs' }, // Hidden until docs are updated — re-enable by uncommenting.
     { id: 'faq', label: 'FAQ' },
     { id: 'contact', label: 'Contact' }
   ];

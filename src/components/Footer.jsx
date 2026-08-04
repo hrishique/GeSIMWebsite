@@ -133,7 +133,7 @@ export default function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/company/gesim/" target="_blank" rel="noopener noreferrer" className="text-[15px] sm:text-[16px] font-medium text-white/90 hover:text-white transition-colors cursor-pointer">
+                    <a href="https://www.linkedin.com/company/gesim-xyz/" target="_blank" rel="noopener noreferrer" className="text-[15px] sm:text-[16px] font-medium text-white/90 hover:text-white transition-colors cursor-pointer">
                       LinkedIn
                     </a>
                   </li>
