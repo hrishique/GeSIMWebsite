@@ -28,7 +28,7 @@ export default function Navbar({ openDownloadModal, openContactModal }) {
     if (item.id === 'faq') {
       scrollToSection('faq-section');
     } else if (item.id === 'contact') {
-      scrollToSection('footer-section');
+      window.open('https://t.me/gesimxyz', '_blank', 'noopener,noreferrer');
     } else if (item.id === 'docs') {
       window.open('https://gesim.gitbook.io/gesim', '_blank', 'noopener,noreferrer');
     } else {
@@ -39,7 +39,7 @@ export default function Navbar({ openDownloadModal, openContactModal }) {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 px-6 py-4">
+    <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md px-6 py-4">
       <div className="max-width-container flex items-center justify-between">
 
         {/* GeSIM Logo Image & Text */}

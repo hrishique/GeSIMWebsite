@@ -12,6 +12,7 @@ import BlogPage from './pages/BlogPage';
 import ArticleDetailPage from './pages/ArticleDetailPage';
 import DocsPage from './pages/DocsPage';
 import LegalPage from './pages/LegalPage';
+import AboutPage from './pages/AboutPage';
 
 export default function App() {
   const [downloadModalOpen, setDownloadModalOpen] = useState(false);
@@ -35,6 +36,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage openDownloadModal={openDownloadModal} openContactModal={openContactModal} />} />
           <Route path="/get-access" element={<EarlyAccessPage />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:articleId" element={<ArticleDetailPage />} />
           <Route path="/terms" element={<LegalPage type="terms" />} />

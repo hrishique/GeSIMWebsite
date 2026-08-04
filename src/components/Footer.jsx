@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Footer({ openDownloadModal }) {
+export default function Footer() {
   return (
     <footer id="footer-section" className="w-full bg-white pt-12 pb-16 select-none">
       <div className="max-width-container space-y-8">
@@ -41,7 +41,7 @@ export default function Footer({ openDownloadModal }) {
               <div className="flex flex-row flex-nowrap items-center gap-2 sm:gap-4 pt-1 sm:pt-2">
                 <a
                   href="#"
-                  onClick={(e) => { e.preventDefault(); openDownloadModal?.(); }}
+                  onClick={(e) => e.preventDefault()}
                   className="transition-transform hover:scale-105 active:scale-95 flex-shrink-0 cursor-pointer"
                   aria-label="Download Seeker Solana Mobile App"
                 >
@@ -54,7 +54,7 @@ export default function Footer({ openDownloadModal }) {
 
                 <a
                   href="#"
-                  onClick={(e) => { e.preventDefault(); openDownloadModal?.(); }}
+                  onClick={(e) => e.preventDefault()}
                   className="transition-transform hover:scale-105 active:scale-95 flex-shrink-0 cursor-pointer"
                   aria-label="Download on the App Store"
                 >
@@ -67,7 +67,7 @@ export default function Footer({ openDownloadModal }) {
 
                 <a
                   href="#"
-                  onClick={(e) => { e.preventDefault(); openDownloadModal?.(); }}
+                  onClick={(e) => e.preventDefault()}
                   className="transition-transform hover:scale-105 active:scale-95 flex-shrink-0 cursor-pointer"
                   aria-label="Get it on Google Play"
                 >
@@ -91,14 +91,22 @@ export default function Footer({ openDownloadModal }) {
                 </h3>
                 <ul className="space-y-3">
                   <li>
-                    <a href="#" onClick={(e) => e.preventDefault()} className="text-[15px] sm:text-[16px] font-medium text-white/90 hover:text-white transition-colors cursor-pointer">
+                    <Link
+                      to="/about"
+                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                      className="text-[15px] sm:text-[16px] font-medium text-white/90 hover:text-white transition-colors cursor-pointer"
+                    >
                       About
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" onClick={(e) => e.preventDefault()} className="text-[15px] sm:text-[16px] font-medium text-white/90 hover:text-white transition-colors cursor-pointer">
+                    <Link
+                      to="/blog"
+                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                      className="text-[15px] sm:text-[16px] font-medium text-white/90 hover:text-white transition-colors cursor-pointer"
+                    >
                       Blog
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a href="https://t.me/gesimxyz" target="_blank" rel="noopener noreferrer" className="text-[15px] sm:text-[16px] font-medium text-white/90 hover:text-white transition-colors cursor-pointer">

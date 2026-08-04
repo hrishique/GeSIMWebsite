@@ -15,7 +15,7 @@ export default function HeroSection({ openDownloadModal }) {
   const bgLandscapeDisplay = useTransform(scrollYProgress, (v) => v > 0.18 ? 'none' : 'block');
 
   // Background 2 (Dotted World Map): Fades in on Page 2 over 100% PURE WHITE background (Screenshot 1)
-  const bgMapOpacity = useTransform(scrollYProgress, [0.15, 0.35, 1], [0, 1, 1]);
+  const bgMapOpacity = useTransform(scrollYProgress, [0.15, 0.35, 1], [0, 0.3, 0.3]);
 
   // Page 1 Headline & Subheadline: Fade out quickly AND completely remove via display:none
   const text1Opacity = useTransform(scrollYProgress, [0, 0.15], [1, 0]);
@@ -63,8 +63,7 @@ export default function HeroSection({ openDownloadModal }) {
 
         {/* Background 2: Clean Dotted World Map Vector on 100% PURE WHITE (Screenshot 1) */}
         <motion.div
-          style={{ opacity: bgMapOpacity }}
-          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none z-0 opacity-80"
+          className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat pointer-events-none z-0"
           style={{ backgroundImage: "url('/assets/clean_dotted_world_map.webp')", opacity: bgMapOpacity }}
         />
 

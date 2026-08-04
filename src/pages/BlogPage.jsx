@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 export default function BlogPage() {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMsg, setErrorMsg] = useState('');
 
   const articles = [
     {
@@ -16,11 +18,34 @@ export default function BlogPage() {
     }
   ];
 
-  const handleSubscribe = (e) => {
+  const handleSubscribe = async (e) => {
     e.preventDefault();
-    setSubscribed(true);
-    setTimeout(() => setSubscribed(false), 3000);
-    setNewsletterEmail('');
+    const email = newsletterEmail.trim();
+    if (!email || submitting) return;
+    setSubmitting(true);
+    setErrorMsg('');
+    try {
+      const res = await fetch('https://formsubmit.co/ajax/charchit@gesim.xyz', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          email,
+          _cc: 'contact@gesim.xyz',
+          _subject: 'New GeSIM newsletter signup',
+          _template: 'table',
+          _captcha: 'false',
+          source: 'gesim.xyz /blog newsletter card',
+        }),
+      });
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      setSubscribed(true);
+      setNewsletterEmail('');
+      setTimeout(() => setSubscribed(false), 4000);
+    } catch {
+      setErrorMsg('Something went wrong — try again in a moment.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -108,7 +133,7 @@ export default function BlogPage() {
             src="/assets/envelope.png"
             alt=""
             aria-hidden="true"
-            className="pointer-events-none absolute z-0 bottom-[-10px] left-[-16px] w-[210px] sm:w-[240px] md:bottom-auto md:top-8 md:left-[-28px] md:w-[320px] lg:left-[-36px] lg:w-[380px]"
+            className="pointer-events-none absolute z-0 bottom-[-10px] left-[-16px] w-[210px] sm:w-[240px] md:top-auto md:bottom-0 md:left-[-28px] md:w-[320px] lg:left-[-36px] lg:w-[380px]"
           />
 
           {/* Content — right half */}
@@ -124,18 +149,23 @@ export default function BlogPage() {
               <input
                 type="email"
                 required
+                disabled={submitting}
                 value={newsletterEmail}
                 onChange={(e) => setNewsletterEmail(e.target.value)}
                 placeholder="whats you email id?"
-                className="h-10 w-full max-w-[372px] rounded-[12px] border border-[#f1f1f1] bg-white px-[13px] text-sm text-[#282f34] placeholder:text-[#282f34]/40 focus:border-[#282f34]/30 focus:outline-none"
+                className="h-10 w-full max-w-[372px] rounded-[12px] border border-[#f1f1f1] bg-white px-[13px] text-sm text-[#282f34] placeholder:text-[#282f34]/40 focus:border-[#282f34]/30 focus:outline-none disabled:opacity-60"
               />
               <button
                 type="submit"
-                className="h-10 min-w-[110px] rounded-full border border-white/20 bg-[#282f34] px-6 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-[1px] hover:bg-[#3a4147]"
+                disabled={submitting}
+                className="h-10 min-w-[110px] rounded-full border border-white/20 bg-[#282f34] px-6 text-sm font-semibold text-white shadow-sm transition-all hover:-translate-y-[1px] hover:bg-[#3a4147] disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:translate-y-0"
               >
-                {subscribed ? 'Subscribed ✓' : 'Proceed'}
+                {subscribed ? 'Subscribed ✓' : submitting ? 'Sending…' : 'Proceed'}
               </button>
             </form>
+            {errorMsg && (
+              <p className="text-sm text-red-500 pt-1" role="alert">{errorMsg}</p>
+            )}
           </div>
         </div>
 

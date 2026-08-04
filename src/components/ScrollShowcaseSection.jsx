@@ -10,7 +10,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       {/* SCREEN 3: CONNECT Showcase Section (Figma Node 764:175237) */}
       {/* Full-Viewport Height & Fully Percentage-Based Responsive Layout */}
       {/* ========================================================================= */}
-      <section className="w-full lg:w-screen lg:h-screen flex-shrink-0 flex items-center justify-center py-10 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
+      <section className="w-full lg:w-screen lg:h-screen flex-shrink-0 flex items-center justify-center py-10 lg:py-16 bg-white overflow-y-auto">
         <div className="max-width-container grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left Column: Sky-Blue Card (#00A3FF) with 2-Beat Animated Device Mockup (Node 764:175237 / 764:178706) */}
@@ -67,7 +67,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="text-[28px] sm:text-[36px] lg:text-[34px] xl:text-[40px] lg:whitespace-nowrap font-extrabold text-[#09090B] tracking-[-1.5px] leading-[1.08] font-heading"
+                className="text-[28px] sm:text-[36px] lg:text-[34px] xl:text-[40px] lg:whitespace-nowrap font-extrabold text-[#282F34] tracking-[-1.5px] leading-[1.08] font-heading"
               >
                 Connect without borders
               </motion.h2>
@@ -92,7 +92,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       {/* ========================================================================= */}
       {/* SCREEN 4: INVEST Showcase Section (Figma Node 764:178717) */}
       {/* ========================================================================= */}
-      <section className="w-full lg:w-screen lg:h-screen flex-shrink-0 flex items-center justify-center py-10 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
+      <section className="w-full lg:w-screen lg:h-screen flex-shrink-0 flex items-center justify-center py-10 lg:py-16 bg-white overflow-y-auto">
         <div className="max-width-container grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left Column: Invest layered card (Figma node 764:178718) */}
@@ -137,7 +137,8 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 className="absolute left-1/2 -translate-x-1/2 top-[8.8%] w-[62%] h-auto max-w-none object-contain z-20 drop-shadow-xl"
               />
 
-              {/* Layer 4: green up-arrow — rises bottom->top, slight delay after phone */}
+              {/* Layer 4: green up-arrow — rises bottom->top, slight delay after phone.
+                  Positioned per Figma node 829:12986 (13%, 35% top-left of a 13%-wide arrow). */}
               <motion.img
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -145,10 +146,11 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 transition={{ duration: 1.0, delay: 0.3, ease: "easeOut" }}
                 src="/assets/invest/InvestArrowUp.svg"
                 alt=""
-                className="absolute left-[14.5%] top-[42.7%] w-[11.4%] z-30 pointer-events-none"
+                className="absolute left-[13%] top-[35%] w-[13%] z-30 pointer-events-none"
               />
 
-              {/* Layer 5: red down-arrow — drops top->down, after up-arrow */}
+              {/* Layer 5: red down-arrow — drops top->down, after up-arrow.
+                  Positioned per Figma node 829:12986 (74% left, 61% top of a 13%-wide arrow). */}
               <motion.img
                 initial={{ opacity: 0, y: -40 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -156,7 +158,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 transition={{ duration: 1.0, delay: 0.6, ease: "easeOut" }}
                 src="/assets/invest/InvestArrowDown.svg"
                 alt=""
-                className="absolute left-[74%] top-[72%] w-[11.4%] z-30 pointer-events-none"
+                className="absolute left-[74%] top-[61%] w-[13%] z-30 pointer-events-none"
               />
 
             </div>
@@ -182,7 +184,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="text-[28px] sm:text-[36px] lg:text-[34px] xl:text-[40px] lg:whitespace-nowrap font-extrabold text-[#09090B] tracking-[-1.5px] leading-[1.08] font-heading"
+                className="text-[28px] sm:text-[36px] lg:text-[34px] xl:text-[40px] lg:whitespace-nowrap font-extrabold text-[#282F34] tracking-[-1.5px] leading-[1.08] font-heading"
               >
                 Grow wealth, Keep privacy
               </motion.h2>
@@ -207,7 +209,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
       {/* ========================================================================= */}
       {/* SCREEN 5: SPEND Showcase Section (Figma Node 764:178780) */}
       {/* ========================================================================= */}
-      <section className="w-full lg:w-screen lg:h-screen flex-shrink-0 flex items-center justify-center py-10 lg:py-16 border-t border-slate-100 bg-white overflow-y-auto">
+      <section className="w-full lg:w-screen lg:h-screen flex-shrink-0 flex items-center justify-center py-10 lg:py-16 bg-white overflow-y-auto">
         <div className="max-width-container grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left Column: Spend layered card (Figma node 764:178780) */}
@@ -270,7 +272,7 @@ export default function ScrollShowcaseSection({ openDownloadModal }) {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="text-[28px] sm:text-[36px] lg:text-[34px] xl:text-[40px] lg:whitespace-nowrap font-extrabold text-[#09090B] tracking-[-1.5px] leading-[1.08] font-heading"
+                className="text-[28px] sm:text-[36px] lg:text-[34px] xl:text-[40px] lg:whitespace-nowrap font-extrabold text-[#282F34] tracking-[-1.5px] leading-[1.08] font-heading"
               >
                 Spend like a local. Anywhere.
               </motion.h2>

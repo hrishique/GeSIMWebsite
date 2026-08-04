@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { Gem, Plane, ShieldCheck, CreditCard, TrendingUp } from 'lucide-react';
 
 export default function BenefitsMarquee() {
@@ -57,7 +56,7 @@ export default function BenefitsMarquee() {
   const marqueeCards = [...cards, ...cards];
 
   return (
-    <section className="w-full bg-[#F7F9FB] border-t border-slate-200/60 pt-16 pb-20 lg:py-24 overflow-hidden select-none flex flex-col gap-10 sm:gap-14 lg:gap-16 text-left items-start">
+    <section className="w-full bg-[#F7F9FB] pt-16 pb-20 lg:py-24 overflow-hidden select-none flex flex-col gap-10 sm:gap-14 lg:gap-16 text-left items-start">
       
       {/* Section Heading Inset to Content Container */}
       <div className="max-width-container text-left w-full">
@@ -66,15 +65,17 @@ export default function BenefitsMarquee() {
         </h2>
       </div>
 
-      {/* Full-Bleed Infinite Horizontal Scroll Marquee Row (Pauses on Hover / Touch) */}
-      <div className="w-full overflow-hidden">
-        <div className="flex items-center gap-6 lg:gap-8 w-max animate-benefits-marquee group">
+      {/* Full-Bleed Infinite Horizontal Scroll Marquee Row (Pauses on Hover / Touch).
+          overflow-x-hidden clips the huge horizontal marquee track but leaves vertical
+          overflow visible so each card's border and shadow render fully at the bottom. */}
+      <div className="w-full overflow-x-hidden py-2">
+        <div className="flex items-stretch gap-6 lg:gap-8 w-max animate-benefits-marquee group">
           {marqueeCards.map((card, index) => {
             const IconComponent = card.icon;
             return (
               <div 
                 key={`${card.id}-${index}`}
-                className="w-auto sm:w-[500px] lg:w-[540px] min-h-[220px] sm:h-[260px] lg:h-[270px] bg-white border border-[#F1F1F1] rounded-[20px] p-5 sm:p-7 lg:p-8 flex flex-col justify-center flex-shrink-0 transition-transform duration-300 hover:scale-[1.02] cursor-pointer shadow-sm"
+                className="w-[340px] sm:w-[500px] lg:w-[540px] h-[280px] sm:h-[270px] lg:h-[280px] bg-white border border-[#F1F1F1] rounded-[20px] p-5 sm:p-7 lg:p-8 flex flex-col justify-center flex-shrink-0 transition-transform duration-300 hover:scale-[1.02] cursor-pointer shadow-sm"
               >
                 {/* Top Icon */}
                 <div className="w-10 h-10 rounded-xl bg-slate-100 text-[#282F34] flex items-center justify-center mb-3">

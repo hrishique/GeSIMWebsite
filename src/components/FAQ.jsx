@@ -2,34 +2,34 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Plus } from 'lucide-react';
 
-export default function FAQ({ openContactModal }) {
+export default function FAQ() {
   // First item open by default per Figma design
   const [openIndex, setOpenIndex] = useState(0);
 
   const faqItems = [
     {
       question: 'Why do I need to install an app?',
-      answer: 'eSIM provisioning requires a mobile OS. The app is your control centre for connectivity — plans, VPN, virtual number, everything in one place.'
+      answer: 'eSIMs need a mobile OS to provision. The app handles everything — plans, VPN, your virtual number — all in one place. No browser version can do that.'
     },
     {
       question: 'Do you need my ID or passport?',
-      answer: 'No. GeSIM does not require ID verification, passport scans, or KYC for core connectivity services like eSIM data plans, VPN, and virtual numbers. For financial features such as investing and spending, a lightweight verification may be needed to comply with regulations — but we keep it minimal and never store more than necessary.'
+      answer: "No. No KYC, no passport scans, no ID for eSIM, VPN, or virtual numbers. If you use investing or the spend card, we'll ask for minimal verification — just what regulations require, nothing more."
     },
     {
       question: "Can my regular carrier see I'm using GeSIM?",
-      answer: "No. When you activate a GeSIM eSIM plan, your data traffic routes through our network, not your carrier's. Your regular carrier will see that an eSIM profile is installed, but they cannot monitor your browsing, calls, or usage on the GeSIM line. With VPN enabled, even your ISP cannot inspect your traffic."
+      answer: "They can see a second eSIM profile is installed. That's it. Your traffic, browsing, and usage on the GeSIM line are invisible to them. Turn on VPN and your ISP can't see anything either."
     },
     {
       question: 'Where is GeSIM available?',
-      answer: 'GeSIM provides eSIM data coverage in 190+ countries and territories worldwide. Virtual numbers are available across 15+ countries. Financial services including investing and the virtual spending card are accessible globally, subject to local regulatory availability. Check the app for the latest country list.'
+      answer: 'eSIM data in 190+ countries. Virtual numbers in 15+ countries. The spend card and investing work globally, with a few local exceptions. Check the app for the live list.'
     },
     {
       question: 'How do I pay?',
-      answer: 'Currently, you can pay using USDC (stablecoin) and card payments (Visa, Mastercard). Apple Pay support is coming soon. All payments are processed securely with end-to-end encryption. There are no hidden fees — the price you see is the price you pay.'
+      answer: 'USDC, Apple Pay is coming. No hidden fees — what you see is what you pay.'
     },
     {
       question: 'Is my data safe?',
-      answer: 'Absolutely. GeSIM uses military-grade AES-256 encryption for all data in transit and at rest. Our built-in VPN ensures your browsing stays private from ISPs, public Wi-Fi snoopers, and third-party trackers. We follow a strict no-logs policy — we do not store, sell, or share your browsing history, connection logs, or personal data with anyone.'
+      answer: "AES-256 encryption, built-in VPN, no logs — we don't store, sell, or share your browsing history or connection data. We built GeSIM so we can't see what you're doing even if we wanted to."
     }
   ];
 
@@ -38,29 +38,30 @@ export default function FAQ({ openContactModal }) {
   };
 
   return (
-    <section id="faq-section" className="w-full bg-white border-t border-slate-100 py-16 lg:py-24 select-none">
+    <section id="faq-section" className="w-full bg-white py-16 lg:py-24 select-none">
       <div className="max-width-container">
-        
+
         {/* 2-Column Grid Layout (items-stretch so left and right columns have the same height on desktop) */}
         <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 lg:items-stretch items-start">
-          
+
           {/* Left Column: Heading + "Still have questions?" Card */}
           <div className="lg:col-span-4 w-full flex flex-col justify-between lg:h-full gap-8 lg:gap-12">
-            
+
             {/* Section Heading */}
             <h2 className="text-[38px] sm:text-[48px] lg:text-[56px] font-extrabold text-[#282F34] tracking-[-1.8px] leading-[1.05] font-heading">
               <span className="sm:whitespace-nowrap">Frequently asked</span><br />questions
             </h2>
 
             {/* "Still have questions?" Card (Desktop Only) */}
-            <div className="hidden lg:flex w-full bg-white border border-[#F1F1F1] rounded-[18px] p-6 lg:p-7 flex-col justify-between relative overflow-hidden shadow-sm">
-              {/* Soft landscape background photo filling lower/bg portion */}
-              <img 
-                src="/assets/FAQ/FAQBG.webp" 
-                alt="" 
-                loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none z-0" 
-              />
-
+            <div
+              className="hidden lg:flex w-full bg-white border border-[#F1F1F1] rounded-[18px] p-6 lg:p-7 flex-col justify-between relative overflow-hidden shadow-sm"
+              style={{
+                backgroundImage: "linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('/assets/FAQ/FAQBG.webp')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }}
+            >
               <div className="relative z-10 space-y-2 mb-6">
                 <h3 className="text-[22px] font-heading font-medium text-[#282F34] tracking-[0.44px]">
                   Still have questions?
@@ -71,7 +72,7 @@ export default function FAQ({ openContactModal }) {
               </div>
 
               <div className="relative z-10">
-                <button 
+                <button
                   onClick={() => window.open('https://t.me/gesimxyz', '_blank', 'noopener,noreferrer')}
                   className="bg-[#282F34] text-white px-6 py-3 rounded-full text-[14px] font-medium tracking-[0.14px] hover:bg-black transition-colors shadow-sm cursor-pointer"
                 >
@@ -127,14 +128,15 @@ export default function FAQ({ openContactModal }) {
             </div>
 
             {/* Mobile-Only "Still have questions?" Card (placed after FAQs on mobile) */}
-            <div className="block lg:hidden w-full bg-white border border-[#F1F1F1] rounded-[18px] p-6 mt-8 flex flex-col justify-between relative overflow-hidden shadow-sm">
-              {/* Soft landscape background photo filling lower/bg portion */}
-              <img 
-                src="/assets/FAQ/FAQBG.webp" 
-                alt="" 
-                loading="lazy" className="absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none z-0" 
-              />
-
+            <div
+              className="block lg:hidden w-full bg-white border border-[#F1F1F1] rounded-[18px] p-6 mt-8 flex flex-col justify-between relative overflow-hidden shadow-sm"
+              style={{
+                backgroundImage: "linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('/assets/FAQ/FAQBG.webp')",
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }}
+            >
               <div className="relative z-10 space-y-2 mb-6">
                 <h3 className="text-[22px] font-heading font-medium text-[#282F34] tracking-[0.44px]">
                   Still have questions?
@@ -145,7 +147,7 @@ export default function FAQ({ openContactModal }) {
               </div>
 
               <div className="relative z-10">
-                <button 
+                <button
                   onClick={() => window.open('https://t.me/gesimxyz', '_blank', 'noopener,noreferrer')}
                   className="bg-[#282F34] text-white px-6 py-3 rounded-full text-[14px] font-medium tracking-[0.14px] hover:bg-black transition-colors shadow-sm cursor-pointer"
                 >
