@@ -75,8 +75,8 @@ export default function Navbar({ openDownloadModal, openContactModal }) {
             ))}
           </nav>
 
-          <button 
-            onClick={openDownloadModal}
+          <button
+            onClick={() => { navigate('/get-access'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             className="dark-pill-button text-sm px-6 py-2.5"
           >
             Get Access
@@ -115,7 +115,7 @@ export default function Navbar({ openDownloadModal, openContactModal }) {
             </button>
           ))}
           <button
-            onClick={() => { setMobileMenuOpen(false); openDownloadModal(); }}
+            onClick={() => { setMobileMenuOpen(false); navigate('/get-access'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             className="dark-pill-button justify-center mt-2"
           >
             Get Access

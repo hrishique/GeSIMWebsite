@@ -115,17 +115,17 @@ export default function Footer({ openDownloadModal }) {
                 </h3>
                 <ul className="space-y-3">
                   <li>
-                    <a href="#" onClick={(e) => e.preventDefault()} className="text-[15px] sm:text-[16px] font-medium text-white/90 hover:text-white transition-colors cursor-pointer">
+                    <a href="https://t.me/gesimxyz" target="_blank" rel="noopener noreferrer" className="text-[15px] sm:text-[16px] font-medium text-white/90 hover:text-white transition-colors cursor-pointer">
                       Telegram
                     </a>
                   </li>
                   <li>
-                    <a href="#" onClick={(e) => e.preventDefault()} className="text-[15px] sm:text-[16px] font-medium text-white/90 hover:text-white transition-colors cursor-pointer">
+                    <a href="https://x.com/gesimxyz" target="_blank" rel="noopener noreferrer" className="text-[15px] sm:text-[16px] font-medium text-white/90 hover:text-white transition-colors cursor-pointer">
                       X / Twitter
                     </a>
                   </li>
                   <li>
-                    <a href="#" onClick={(e) => e.preventDefault()} className="text-[15px] sm:text-[16px] font-medium text-white/90 hover:text-white transition-colors cursor-pointer">
+                    <a href="https://www.linkedin.com/company/gesim/" target="_blank" rel="noopener noreferrer" className="text-[15px] sm:text-[16px] font-medium text-white/90 hover:text-white transition-colors cursor-pointer">
                       LinkedIn
                     </a>
                   </li>

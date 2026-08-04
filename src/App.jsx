@@ -7,6 +7,7 @@ import DownloadModal from './components/DownloadModal';
 import ContactModal from './components/ContactModal';
 
 import HomePage from './pages/HomePage';
+import EarlyAccessPage from './pages/EarlyAccessPage';
 import BlogPage from './pages/BlogPage';
 import ArticleDetailPage from './pages/ArticleDetailPage';
 import DocsPage from './pages/DocsPage';
@@ -33,6 +34,7 @@ export default function App() {
       <main className="flex-1">
         <Routes>
           <Route path="/" element={<HomePage openDownloadModal={openDownloadModal} openContactModal={openContactModal} />} />
+          <Route path="/get-access" element={<EarlyAccessPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:articleId" element={<ArticleDetailPage />} />
           <Route path="/terms" element={<LegalPage type="terms" />} />

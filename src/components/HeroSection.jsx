@@ -112,7 +112,7 @@ export default function HeroSection({ openDownloadModal }) {
         {/* Single Live Mobile Phone Container: High-performance WebP format */}
         <motion.div
           style={{ y: phoneContainerY, opacity: phoneOpacity }}
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 w-[72vw] max-w-[300px] sm:max-w-[360px] md:max-w-[390px] sm:w-[390px]"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 z-20 w-[72vw] max-w-[300px] sm:max-w-[360px] md:max-w-[390px] sm:w-[min(390px,36vh)]"
         >
           <div className="relative w-full aspect-[1990/4096] select-none">
             {/* Base framed iPhone (BEHIND): frame, bottom border, and the FIXED bottom nav */}

@@ -15,8 +15,8 @@ export default function DownloadCTA({ openDownloadModal }) {
             <h2 className="relative z-10 text-[32px] font-heading font-semibold text-white text-center tracking-[-0.96px] leading-[1.08] px-6 mb-5 max-w-[286px]">
               Your private network starts here...
             </h2>
-            {/* Badges — wrap so they fit 375px */}
-            <div className="relative z-10 flex flex-wrap items-center justify-center gap-3 px-4 pb-6">
+            {/* Badges — stacked one per line so they never wrap awkwardly */}
+            <div className="relative z-10 flex flex-col items-center gap-3 px-4 pb-6">
               <a href="#" onClick={(e) => { e.preventDefault(); openDownloadModal?.(); }} className="transition-transform active:scale-95 cursor-pointer" aria-label="Download Seeker Solana Mobile App">
                 <img src="/assets/App Links/badge-seeker.png" alt="Seeker Solana Mobile" className="h-[42px] w-auto object-contain" />
               </a>
