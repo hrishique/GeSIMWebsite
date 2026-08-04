@@ -2,22 +2,25 @@ import React from 'react';
 import { Gem, Plane, ShieldCheck, CreditCard, TrendingUp } from 'lucide-react';
 
 export default function BenefitsMarquee() {
+  // width: 'lg' for cards with inline logos / longer subtext, 'md' for the rest.
+  // Same visual rhythm (icon → 1-line title → 2-line description) — only breadth varies.
   const cards = [
     {
       id: 'subscriptions',
       icon: Gem,
       heading: 'Unlock cheaper subscriptions',
+      width: 'lg',
       subtext: (
         <span>
           Save up to 90% on{' '}
-          <img src="/assets/Page9/Page9NLogo.png" alt="Netflix" className="inline-block h-[20px] w-[20px] align-text-bottom mx-0.5 object-contain" />{' '}
+          <img src="/assets/Page9/Page9NLogo.png" alt="Netflix" className="inline-block h-[18px] w-[18px] align-text-bottom mx-0.5 object-contain" />{' '}
           Netflix,{' '}
-          <img src="/assets/Page9/Page9YLogo.png" alt="YouTube" className="inline-block h-[20px] w-[20px] align-text-bottom mx-0.5 object-contain" />{' '}
+          <img src="/assets/Page9/Page9YLogo.png" alt="YouTube" className="inline-block h-[18px] w-[18px] align-text-bottom mx-0.5 object-contain" />{' '}
           YouTube Premium,{' '}
-          <img src="/assets/Page9/Page9CLogo.png" alt="Canva" className="inline-block h-[20px] w-[20px] align-text-bottom mx-0.5 object-contain" />{' '}
+          <img src="/assets/Page9/Page9CLogo.png" alt="Canva" className="inline-block h-[18px] w-[18px] align-text-bottom mx-0.5 object-contain" />{' '}
           Canva,{' '}
-          <img src="/assets/Page9/Page9XLoge.png" alt="X" className="inline-block h-[20px] w-[20px] align-text-bottom mx-0.5 object-contain" />{' '}
-          X Premium and more with regional pricing
+          <img src="/assets/Page9/Page9XLoge.png" alt="X" className="inline-block h-[18px] w-[18px] align-text-bottom mx-0.5 object-contain" />{' '}
+          X Premium and more with regional pricing.
         </span>
       )
     },
@@ -25,32 +28,41 @@ export default function BenefitsMarquee() {
       id: 'travel',
       icon: Plane,
       heading: 'Book cheaper flights & hotels',
-      subtext: 'Compare prices across countries and pay local rates before you book'
+      width: 'md',
+      subtext: 'Compare prices across countries and pay local rates before you book.'
     },
     {
       id: 'privacy',
       icon: ShieldCheck,
       heading: 'Browse privately',
+      width: 'md',
       subtext: 'Protect your browsing from ISP tracking and insecure public Wi-Fi.'
     },
     {
       id: 'spend',
       icon: CreditCard,
       heading: 'Spend globally',
+      width: 'md',
       subtext: 'Add your virtual card to Apple Wallet or Google Wallet and pay almost anywhere.'
     },
     {
       id: 'invest',
       icon: TrendingUp,
       heading: 'Invest in SpaceX & global markets',
+      width: 'lg',
       subtext: (
         <span>
           Access tokenized stocks like SpaceX, Tesla and hundreds of global equities.{' '}
-          <img src="/assets/Page9/Page9LogoGroup.png" alt="SpaceX, Nvidia, Tesla, Apple" className="inline-block h-[22px] object-contain align-text-bottom ml-0.5" />
+          <img src="/assets/Page9/Page9LogoGroup.png" alt="SpaceX, Nvidia, Tesla, Apple" className="inline-block h-[20px] object-contain align-text-bottom ml-0.5" />
         </span>
       )
     }
   ];
+
+  const widthClass = {
+    md: 'w-[320px] sm:w-[400px] lg:w-[440px]',
+    lg: 'w-[340px] sm:w-[480px] lg:w-[540px]',
+  };
 
   // Double cards array for seamless 0% -> -50% infinite marquee loop
   const marqueeCards = [...cards, ...cards];
@@ -73,23 +85,23 @@ export default function BenefitsMarquee() {
           {marqueeCards.map((card, index) => {
             const IconComponent = card.icon;
             return (
-              <div 
+              <div
                 key={`${card.id}-${index}`}
-                className="w-[340px] sm:w-[500px] lg:w-[540px] h-[280px] sm:h-[270px] lg:h-[280px] bg-white border border-[#F1F1F1] rounded-[20px] p-5 sm:p-7 lg:p-8 flex flex-col justify-center flex-shrink-0 transition-transform duration-300 hover:scale-[1.02] cursor-pointer shadow-sm"
+                className={`${widthClass[card.width]} bg-white border border-[#F1F1F1] rounded-[20px] px-6 py-5 sm:px-7 sm:py-6 flex flex-col gap-3 sm:gap-4 flex-shrink-0 transition-transform duration-300 hover:scale-[1.02] cursor-pointer shadow-sm`}
               >
-                {/* Top Icon */}
-                <div className="w-10 h-10 rounded-xl bg-slate-100 text-[#282F34] flex items-center justify-center mb-3">
+                {/* Icon */}
+                <div className="w-10 h-10 rounded-xl bg-slate-100 text-[#282F34] flex items-center justify-center">
                   <IconComponent className="w-5 h-5 sm:w-6 sm:h-6 stroke-[2.2]" />
                 </div>
 
-                {/* Content */}
-                <div className="space-y-2.5">
-                  <h3 className="text-[22px] sm:text-[26px] lg:text-[28px] font-heading font-semibold text-[#282F34] tracking-[-0.8px] sm:tracking-[-0.96px] leading-[1.2] whitespace-nowrap sm:whitespace-normal">
-                    {card.heading}
-                  </h3>
-                  <div className="text-[14px] sm:text-[16px] lg:text-[17px] font-body text-[#282F34]/70 leading-[1.5] tracking-[-0.22px]">
-                    {card.subtext}
-                  </div>
+                {/* Heading — always 1 line */}
+                <h3 className="text-[20px] sm:text-[24px] lg:text-[26px] font-heading font-semibold text-[#282F34] tracking-[-0.8px] leading-[1.2] whitespace-nowrap overflow-hidden text-ellipsis">
+                  {card.heading}
+                </h3>
+
+                {/* Description — always exactly 2 lines (clamped at 2, height reserved for 2) */}
+                <div className="text-[14px] sm:text-[15px] lg:text-[16px] font-body text-[#282F34]/70 leading-[1.5] tracking-[-0.22px] line-clamp-2 min-h-[3em]">
+                  {card.subtext}
                 </div>
               </div>
             );

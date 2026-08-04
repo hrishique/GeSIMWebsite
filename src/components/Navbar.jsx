@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 export default function Navbar({ openDownloadModal, openContactModal }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navigate = useNavigate();
+
+  // Lock body scroll while the full-screen mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      const prev = document.body.style.overflow;
+      document.body.style.overflow = 'hidden';
+      return () => { document.body.style.overflow = prev; };
+    }
+  }, [mobileMenuOpen]);
 
   const navItems = [
     { id: 'blog', label: 'Blog' },
@@ -39,6 +48,7 @@ export default function Navbar({ openDownloadModal, openContactModal }) {
   };
 
   return (
+    <>
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md px-6 py-4">
       <div className="max-width-container flex items-center justify-between">
 
@@ -75,7 +85,7 @@ export default function Navbar({ openDownloadModal, openContactModal }) {
           </nav>
 
           <button
-            onClick={openDownloadModal}
+            onClick={() => { navigate('/get-access'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
             className="dark-pill-button text-sm px-6 py-2.5"
           >
             Get Access
@@ -100,27 +110,57 @@ export default function Navbar({ openDownloadModal, openContactModal }) {
         </button>
       </div>
 
-      {/* Mobile Menu Drawer */}
-      {mobileMenuOpen && (
-        <div className="md:hidden mt-3 pt-3 border-t border-slate-100 flex flex-col gap-2 px-2 pb-4">
+    </header>
+
+    {/* Mobile Full-Screen Menu Overlay — sibling of <header> so backdrop-filter
+        in the header doesn't trap `fixed inset-0` into the header's box. */}
+    {mobileMenuOpen && (
+      <div
+        className="md:hidden fixed inset-0 z-[60] flex flex-col"
+        style={{ backgroundColor: '#ffffff' }}
+      >
+        {/* Top row: logo + close X */}
+        <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100">
+          <button
+            onClick={() => { setMobileMenuOpen(false); navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer"
+          >
+            <img src="/assets/GeSIMLog.webp" alt="GeSIM Logo" className="h-8 w-auto object-contain" />
+            <span className="text-[20px] font-heading font-extrabold text-[#282F34] tracking-[-0.5px]">GeSIM</span>
+          </button>
+          <button
+            onClick={() => setMobileMenuOpen(false)}
+            className="w-11 h-11 flex items-center justify-center bg-transparent border-none cursor-pointer"
+            aria-label="Close Menu"
+          >
+            <X className="w-6 h-6 text-[#282F34]" strokeWidth={2.2} />
+          </button>
+        </div>
+
+        {/* Centered stack of big nav links */}
+        <div className="flex-1 flex flex-col items-center justify-center gap-8 px-6">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleNavClick(item)}
-              className="flex items-center justify-between w-full px-4 py-3 rounded-xl text-left font-medium text-slate-800 hover:bg-slate-50 border-none bg-transparent"
+              className="text-[44px] font-heading font-semibold text-[#282F34] tracking-[-1.2px] leading-none bg-transparent border-none cursor-pointer"
             >
-              <span>{item.label}</span>
-              <ArrowRight className="w-4 h-4 text-slate-400" />
+              {item.label}
             </button>
           ))}
+        </div>
+
+        {/* Bottom full-width Get Access button → /get-access */}
+        <div className="px-6 pb-8 pt-4">
           <button
-            onClick={() => { setMobileMenuOpen(false); openDownloadModal(); }}
-            className="dark-pill-button justify-center mt-2"
+            onClick={() => { setMobileMenuOpen(false); navigate('/get-access'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            className="dark-pill-button w-full justify-center py-4 text-base"
           >
-            Download
+            Get Access
           </button>
         </div>
-      )}
-    </header>
+      </div>
+    )}
+    </>
   );
 }

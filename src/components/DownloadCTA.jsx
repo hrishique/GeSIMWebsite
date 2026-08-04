@@ -6,37 +6,42 @@ export default function DownloadCTA() {
     <section className="w-full py-16 lg:py-24 bg-white select-none">
       <div className="max-width-container">
 
-        {/* Mobile CTA card (vertical, phone overhangs top) — matches Figma 829:15983 */}
-        <div className="lg:hidden pt-24">
-          <div className="relative w-full max-w-[354px] mx-auto aspect-[354/520] rounded-[18px] overflow-hidden shadow-lg flex flex-col items-center justify-end">
-            {/* Background gradient */}
+        {/* Mobile CTA card (vertical, phone at top).
+            NO fixed aspect-ratio → card height is driven by content, so it grows if the
+            heading or badges wrap to more lines. Phone lives in a proportional pt- area at
+            the top; text/badges flow naturally beneath — no absolute overlap possible. */}
+        <div className="lg:hidden pt-8">
+          <div className="relative w-full max-w-[354px] mx-auto rounded-[18px] overflow-hidden shadow-lg">
+            {/* Background gradient — stretches to whatever card height ends up being */}
             <img src="/assets/App Links/AppLinksBG.webp" alt="" className="absolute inset-0 w-full h-full object-cover pointer-events-none z-0" />
-            {/* Heading */}
-            <h2 className="relative z-10 text-[32px] font-heading font-semibold text-white text-center tracking-[-0.96px] leading-[1.08] px-6 mb-5 max-w-[286px]">
-              Your private network starts here...
-            </h2>
-            {/* Badges — App Store + Google Play on row 1, Seeker on row 2.
-                flex-wrap lets them collapse to single rows on very narrow screens. */}
-            <div className="relative z-10 flex flex-wrap items-center justify-center gap-3 px-4 pb-6">
-              <a href="#" onClick={(e) => e.preventDefault()} className="transition-transform active:scale-95 cursor-pointer" aria-label="Download on the App Store">
-                <img src="/assets/App Links/badge-appstore.png" alt="Download on the App Store" className="h-[42px] w-auto object-contain" />
-              </a>
-              <a href="#" onClick={(e) => e.preventDefault()} className="transition-transform active:scale-95 cursor-pointer" aria-label="Get it on Google Play">
-                <img src="/assets/App Links/badge-playstore.png" alt="Get it on Google Play" className="h-[42px] w-auto object-contain" />
-              </a>
-              <a href="#" onClick={(e) => e.preventDefault()} className="basis-full flex justify-center transition-transform active:scale-95 cursor-pointer" aria-label="Download Seeker Solana Mobile App">
-                <img src="/assets/App Links/badge-seeker.png" alt="Seeker Solana Mobile" className="h-[42px] w-auto object-contain" />
-              </a>
-            </div>
-            {/* Phone overhanging the top — sized/positioned so its bottom clears the heading.
-                Compound drop-shadow: a small close shadow for grounding + a large soft shadow
-                so the phone's hard bottom edge doesn't project as a sharp horizontal line. */}
+            {/* Phone — proportional width and vertical position (top offset is % of card WIDTH
+                via padding trick since parent has no fixed height). */}
             <img
               src="/assets/App Links/AppLinksMobileImg.webp"
               alt="GeSIM Mobile Interface"
-              className="absolute left-1/2 -translate-x-1/2 top-[-90px] w-[230px] h-auto object-contain z-20 pointer-events-none"
+              className="absolute left-1/2 -translate-x-1/2 top-0 w-[88%] h-auto object-contain z-10 pointer-events-none"
               style={{ filter: 'drop-shadow(0 6px 10px rgba(15, 23, 42, 0.14)) drop-shadow(0 24px 48px rgba(15, 23, 42, 0.18))' }}
             />
+            {/* Content — pt-[85%] reserves vertical space equal to 85% of card width (≈ the phone's
+                visible height). Everything below flows in normal document order so there's zero
+                overlap even if the heading wraps to more lines on narrow viewports. */}
+            <div className="relative z-20 flex flex-col items-center pt-[85%] pb-6 px-4">
+              <h2 className="text-[clamp(20px,6.5vw,32px)] font-heading font-semibold text-white text-center tracking-[-0.96px] leading-[1.1] px-2 mb-5 max-w-[286px]">
+                Your private network starts here...
+              </h2>
+              {/* Badges — App Store + Google Play on row 1, Seeker on row 2. */}
+              <div className="flex flex-wrap items-center justify-center gap-3">
+                <a href="#" onClick={(e) => e.preventDefault()} className="transition-transform active:scale-95 cursor-pointer" aria-label="Download on the App Store">
+                  <img src="/assets/App Links/badge-appstore.png" alt="Download on the App Store" className="h-[42px] w-auto object-contain" />
+                </a>
+                <a href="#" onClick={(e) => e.preventDefault()} className="transition-transform active:scale-95 cursor-pointer" aria-label="Get it on Google Play">
+                  <img src="/assets/App Links/badge-playstore.png" alt="Get it on Google Play" className="h-[42px] w-auto object-contain" />
+                </a>
+                <a href="#" onClick={(e) => e.preventDefault()} className="basis-full flex justify-center transition-transform active:scale-95 cursor-pointer" aria-label="Download Seeker Solana Mobile App">
+                  <img src="/assets/App Links/badge-seeker.png" alt="Seeker Solana Mobile" className="h-[42px] w-auto object-contain" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
