@@ -41,15 +41,15 @@ export default function Navbar({ openDownloadModal, openContactModal }) {
   return (
     <header className="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 px-6 py-4">
       <div className="max-width-container flex items-center justify-between">
-        
+
         {/* GeSIM Logo Image & Text */}
-        <button 
-          onClick={() => { navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} 
+        <button
+          onClick={() => { navigate('/'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
           className="flex items-center gap-2.5 bg-transparent border-none cursor-pointer group"
         >
-          <img 
-            src="/assets/GeSIMLog.webp" 
-            alt="GeSIM Logo" 
+          <img
+            src="/assets/GeSIMLog.webp"
+            alt="GeSIM Logo"
             className="h-8 md:h-9 w-auto object-contain transition-transform group-hover:scale-105"
           />
           <span className="text-[20px] md:text-[22px] font-heading font-extrabold text-[#282F34] tracking-[-0.5px]">
@@ -64,11 +64,10 @@ export default function Navbar({ openDownloadModal, openContactModal }) {
               <button
                 key={item.id}
                 onClick={() => handleNavClick(item)}
-                className={`text-sm font-medium transition-colors border-none bg-transparent cursor-pointer ${
-                  window.location.pathname === '/' + item.id && item.id !== 'faq' && item.id !== 'contact'
-                    ? 'text-slate-900 font-bold'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
+                className={`text-sm font-medium transition-colors border-none bg-transparent cursor-pointer ${window.location.pathname === '/' + item.id && item.id !== 'faq' && item.id !== 'contact'
+                  ? 'text-slate-900 font-bold'
+                  : 'text-slate-600 hover:text-slate-900'
+                  }`}
               >
                 {item.label}
               </button>
@@ -76,7 +75,7 @@ export default function Navbar({ openDownloadModal, openContactModal }) {
           </nav>
 
           <button
-            onClick={() => { navigate('/get-access'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            onClick={openDownloadModal}
             className="dark-pill-button text-sm px-6 py-2.5"
           >
             Get Access
@@ -92,10 +91,10 @@ export default function Navbar({ openDownloadModal, openContactModal }) {
           {mobileMenuOpen ? (
             <X className="w-5 h-5 text-[#282F34]" />
           ) : (
-            <img 
-              src="/assets/mobile/Hamburger_Menu/Hamburger.svg" 
-              alt="Menu" 
-              className="w-5 h-auto object-contain" 
+            <img
+              src="/assets/mobile/Hamburger_Menu/Hamburger.svg"
+              alt="Menu"
+              className="w-5 h-auto object-contain"
             />
           )}
         </button>
@@ -115,10 +114,10 @@ export default function Navbar({ openDownloadModal, openContactModal }) {
             </button>
           ))}
           <button
-            onClick={() => { setMobileMenuOpen(false); navigate('/get-access'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            onClick={() => { setMobileMenuOpen(false); openDownloadModal(); }}
             className="dark-pill-button justify-center mt-2"
           >
-            Get Access
+            Download
           </button>
         </div>
       )}

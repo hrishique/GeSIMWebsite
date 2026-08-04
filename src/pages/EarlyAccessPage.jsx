@@ -16,31 +16,28 @@ export default function EarlyAccessPage() {
     <div className="py-16 md:py-20 bg-white font-sans text-left">
       <div className="max-width-container flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-14">
 
-        {/* Left: blueprint card (CSS placeholder — swap for the exported Figma asset if desired) */}
+        {/* Left: blueprint card — exact Figma composition (node 914:248578) */}
         <div className="w-full shrink-0 lg:w-[42%] lg:max-w-[440px]">
-          <div className="relative aspect-square w-full overflow-hidden rounded-[24px] bg-gradient-to-br from-[#37A6FF] to-[#0A84FF]">
-            {/* blueprint grid */}
-            <div
-              className="absolute inset-0 opacity-70"
-              style={{
-                backgroundImage:
-                  'linear-gradient(rgba(255,255,255,0.14) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.14) 1px, transparent 1px)',
-                backgroundSize: '34px 34px',
-              }}
+          <div className="relative aspect-[434/454] w-full overflow-hidden rounded-[18px] border border-[#f1f1f1] bg-gradient-to-b from-[#1bb3f3] to-[#1468db]">
+            {/* Cutting-mat texture (20% opacity), sized/placed exactly as in Figma */}
+            <img
+              src="/assets/ea-texture.jpg"
+              alt=""
+              aria-hidden="true"
+              className="pointer-events-none absolute max-w-none object-cover opacity-20"
+              style={{ left: '-65.44%', top: '-60.35%', width: '230.88%', height: '220.70%' }}
             />
-            {/* corner accent squares */}
-            {[['28%', '28%'], ['72%', '28%'], ['28%', '72%'], ['72%', '72%']].map(([l, t]) => (
-              <div
-                key={`${l}-${t}`}
-                className="absolute h-3 w-3 -translate-x-1/2 -translate-y-1/2 bg-white/25"
-                style={{ left: l, top: t }}
-              />
-            ))}
-            {/* soft sheen */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/5" />
-            {/* logo */}
+            {/* Blueprint line-work (SVG), exact crop from Figma */}
+            <img
+              src="/assets/ea-blueprint.svg"
+              alt=""
+              aria-hidden="true"
+              className="pointer-events-none absolute max-w-none"
+              style={{ left: '-46.77%', top: '-53.30%', width: '193.55%', height: '206.61%' }}
+            />
+            {/* Logo */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <img src="/assets/GetAccess.png" alt="GeSIM" className="w-[30%] h-auto object-contain" />
+              <img src="/assets/GetAccess.png" alt="GeSIM" className="w-[20%] h-auto object-contain" />
             </div>
           </div>
         </div>

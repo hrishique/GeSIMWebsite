@@ -72,7 +72,7 @@ export default function FAQ({ openContactModal }) {
 
               <div className="relative z-10">
                 <button 
-                  onClick={() => openContactModal?.()}
+                  onClick={() => window.open('https://t.me/gesimxyz', '_blank', 'noopener,noreferrer')}
                   className="bg-[#282F34] text-white px-6 py-3 rounded-full text-[14px] font-medium tracking-[0.14px] hover:bg-black transition-colors shadow-sm cursor-pointer"
                 >
                   Connect with us
@@ -146,7 +146,7 @@ export default function FAQ({ openContactModal }) {
 
               <div className="relative z-10">
                 <button 
-                  onClick={() => openContactModal?.()}
+                  onClick={() => window.open('https://t.me/gesimxyz', '_blank', 'noopener,noreferrer')}
                   className="bg-[#282F34] text-white px-6 py-3 rounded-full text-[14px] font-medium tracking-[0.14px] hover:bg-black transition-colors shadow-sm cursor-pointer"
                 >
                   Connect with us

@@ -101,7 +101,7 @@ export default function Footer({ openDownloadModal }) {
                     </a>
                   </li>
                   <li>
-                    <a href="#" onClick={(e) => e.preventDefault()} className="text-[15px] sm:text-[16px] font-medium text-white/90 hover:text-white transition-colors cursor-pointer">
+                    <a href="https://t.me/gesimxyz" target="_blank" rel="noopener noreferrer" className="text-[15px] sm:text-[16px] font-medium text-white/90 hover:text-white transition-colors cursor-pointer">
                       Contact
                     </a>
                   </li>

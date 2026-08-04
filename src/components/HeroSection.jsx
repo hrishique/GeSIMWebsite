@@ -130,7 +130,7 @@ export default function HeroSection({ openDownloadModal }) {
                 a clean gap above it. */}
             <div
               className="absolute z-10 overflow-clip bg-white"
-              style={{ top: '6%', left: '5.2%', right: '5.2%', bottom: '10.5%' }}
+              style={{ top: '7%', left: '5.2%', right: '5.2%', bottom: '10.5%' }}
             >
               <div className="absolute inset-x-0 top-0 overflow-clip" style={{ bottom: '12px' }}>
                 <motion.img

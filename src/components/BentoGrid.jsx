@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, ArrowUp, ArrowDown, Shield, Globe, Lock, CreditCard, Gem, Briefcase, Rocket } from 'lucide-react';
 import { SiApple, SiBitcoin } from 'react-icons/si';
 import InteractiveESimModal from './InteractiveESimModal';
 
 export default function BentoGrid({ openDownloadModal }) {
+  const navigate = useNavigate();
   const [eSimModalOpen, setESimModalOpen] = useState(false);
 
   const benefits = [
@@ -88,7 +90,7 @@ export default function BentoGrid({ openDownloadModal }) {
                 Stay connected with instant mobile data across 190+ countries
               </p>
               <div className="pt-2">
-                <button onClick={() => setESimModalOpen(true)} className="dark-pill-button text-xs py-2.5 px-6">
+                <button onClick={() => { navigate('/get-access'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="dark-pill-button text-xs py-2.5 px-6">
                   Get Access
                 </button>
               </div>
