@@ -32,7 +32,7 @@ export default function BentoGrid() {
 
         {/* Mobile-Only Bento Stack */}
         <div className="lg:hidden flex flex-col gap-4 mb-20">
-          <img src="/assets/mobile/bento/ESimCard.webp" alt="Global eSIM: instant mobile data across 190+ countries" className="w-full aspect-[354/582] object-cover rounded-[18px]" />
+          <img src="/assets/mobile/bento/ESimCard.webp" alt="Global eSIM: instant mobile data across 190+ countries" className="w-full h-auto object-contain rounded-[18px]" />
           <img src="/assets/mobile/bento/BrowseSecurely.webp" alt="Browse Securely: secure built-in VPN access" className="w-full aspect-[354/283] object-cover rounded-[18px]" />
           <img src="/assets/mobile/bento/InvestPrivately.webp" alt="Invest Privately: trade stocks, crypto, commodities and stablecoins" className="w-full aspect-[354/283] object-cover rounded-[18px]" />
           <img src="/assets/mobile/bento/VirtualNumbers.webp" alt="Virtual Numbers: call, receive OTPs and verify accounts from anywhere" className="w-full aspect-[354/344] object-cover rounded-[18px]" />
