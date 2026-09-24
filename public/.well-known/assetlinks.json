@@ -7,7 +7,8 @@
       "namespace": "android_app",
       "package_name": "com.gesim.wallet",
       "sha256_cert_fingerprints": [
-        "D5:7C:AA:CC:55:BD:D5:AA:A2:23:1D:8D:57:81:1C:A2:AC:D3:C0:8F:45:FD:6F:46:58:21:4C:11:2C:2B:59:6D"
+        "D5:7C:AA:CC:55:BD:D5:AA:A2:23:1D:8D:57:81:1C:A2:AC:D3:C0:8F:45:FD:6F:46:58:21:4C:11:2C:2B:59:6D",
+        "FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C"
       ]
     }
   }
